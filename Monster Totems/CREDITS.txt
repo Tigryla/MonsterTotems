@@ -1,4 +1,4 @@
-This is Monster Totems.
+This is Monster Totems // A Minecraft Mod.
 
 You can find the source code at all times at https://github.com/MSpaceDev/MonsterTotems
 

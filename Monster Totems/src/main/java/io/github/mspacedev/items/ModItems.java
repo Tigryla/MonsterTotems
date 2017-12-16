@@ -9,5 +9,9 @@ import net.minecraft.item.Item;
  */
 
 public class ModItems {
-    public static Item ITEMS[] = {};
-}
+    public static Item carving_tool = new ItemCarvingTool("carving_tool");
+
+    public static Item ITEMS[] = {
+            carving_tool
+    };
+            }

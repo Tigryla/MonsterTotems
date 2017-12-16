@@ -1,0 +1,15 @@
+#English GB
+
+# Creative Tab
+
+
+# Blocks
+tile.totem_base_i.name=Totem Base Tier I
+tile.totem_base_ii.name=Totem Base Tier II
+tile.totem_base_iii.name=Totem Base Tier III
+tile.zombie_totem.name=Zombie Totem
+tile.zombie_infused_log.name=Zombie Infused Log
+
+# Items
+item.carving_tool.name=Carving Tool
+

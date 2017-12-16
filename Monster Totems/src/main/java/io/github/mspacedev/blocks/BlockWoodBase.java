@@ -9,11 +9,11 @@ import net.minecraft.block.material.Material;
  * https://mspace-dev.github.io
  */
 
-public class BlockInfusedLog extends BlockBase {
-    public BlockInfusedLog(String name, Material materialIn) {
+public class BlockWoodBase extends BlockBase {
+    public BlockWoodBase(String name, Material materialIn) {
         super(name, materialIn);
-        setSoundType(SoundType.WOOD);
-        setHardness(2.0f);
+        this.setHardness(2.0f);
+        this.setSoundType(SoundType.WOOD);
         setHarvestLevel("axe", 0);
     }
 }

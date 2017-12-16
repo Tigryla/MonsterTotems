@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -26,7 +27,7 @@ public class RegistryEventHandler {
     public static void registerBlocks(RegistryEvent.Register<Block> event){
         event.getRegistry().registerAll(ModBlocks.BLOCKS);
 
-        Utils.getLogger().info("BitOfEverything Blocks Registered");
+        Utils.getLogger().info("Monster Totems Blocks Registered");
     }
 
     @SubscribeEvent
@@ -37,7 +38,7 @@ public class RegistryEventHandler {
             event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
         }
 
-        Utils.getLogger().info("BitOfEverything Items Registered");
+        Utils.getLogger().info("Monster Totems Items Registered");
     }
 
     @SubscribeEvent
@@ -50,6 +51,6 @@ public class RegistryEventHandler {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
 
-        Utils.getLogger().info("BitOfEverything Models Registered");
+        Utils.getLogger().info("Monster Totems Models Registered");
     }
 }

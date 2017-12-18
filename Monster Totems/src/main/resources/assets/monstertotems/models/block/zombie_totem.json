@@ -1,6 +1,7 @@
+
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "monstertotems:blocks/zombie_totem"
-  }
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "monstertotems:blocks/totem_heads/zombie_totem"
+    }
 }

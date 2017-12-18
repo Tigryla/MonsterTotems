@@ -14,5 +14,6 @@ public class ModTileEntities {
         GameRegistry.registerTileEntity(TileEntityTotemBaseI.class, "totem_base_i");
         GameRegistry.registerTileEntity(TileEntityTotemBaseII.class, "totem_base_ii");
         GameRegistry.registerTileEntity(TileEntityTotemBaseIII.class, "totem_base_iii");
+        GameRegistry.registerTileEntity(TileEntityInfusedLog.class, "infused_log");
     }
 }

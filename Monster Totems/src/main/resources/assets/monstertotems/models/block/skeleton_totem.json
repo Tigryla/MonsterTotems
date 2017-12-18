@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "monstertotems:blocks/totem_heads/skeleton_totem"
+    }
+}

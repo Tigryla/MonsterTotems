@@ -9,8 +9,10 @@ import net.minecraft.block.material.Material;
  * https://mspace-dev.github.io
  */
 
-public class BlockZombieTotem extends BlockWoodBase {
+public class BlockZombieTotem extends BlockTotemHeadBase {
     public BlockZombieTotem(String name, Material materialIn) {
         super(name, materialIn);
+        tooltipText.add("Stops Zombies and Zombie Villagers from spawning");
+        tooltipText.add("when placed on a totem base");
     }
 }

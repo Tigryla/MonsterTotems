@@ -4,6 +4,7 @@ import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.items.ModItems;
 import io.github.mspacedev.proxies.CommonProxy;
 import io.github.mspacedev.tiles.ModTileEntities;
+import io.github.mspacedev.utils.Utils;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,11 +42,13 @@ public class MonsterTotems {
     public void init(FMLInitializationEvent event){
         proxy.init(event);
         ModTileEntities.init();
+        RegisterRecipes.register();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
         proxy.postInit(event);
         MinecraftForge.EVENT_BUS.register(new TotemBaseEventHandler());
+        MinecraftForge.EVENT_BUS.register(new LootDropsEventHandler());
     }
 }

@@ -15,16 +15,10 @@ import javax.annotation.Nullable;
  * https://mspace-dev.github.io
  */
 
-public class BlockZombieInfusedLog extends BlockWoodBase implements ITileEntityProvider{
+public class BlockZombieInfusedLog extends BlockInfusedLog {
     public BlockZombieInfusedLog(String name, Material materialIn) {
         super(name, materialIn);
         tooltipText.add("Carve with the Carving Tool to create");
         tooltipText.add("a Zombie Totem Head");
-    }
-
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityInfusedLog();
     }
 }

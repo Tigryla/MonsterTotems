@@ -1,14 +1,40 @@
 #English GB
 
 # Creative Tab
-
+itemGroup.monstertotems=Monster Totems
 
 # Blocks
+# Totem Bases
 tile.totem_base_i.name=Totem Base Tier I
 tile.totem_base_ii.name=Totem Base Tier II
 tile.totem_base_iii.name=Totem Base Tier III
-tile.zombie_totem.name=Zombie Totem
+# Infused Logs
 tile.zombie_infused_log.name=Zombie Infused Log
+tile.skeleton_infused_log.name=Skeleton Infused Log
+tile.creeper_infused_log.name=Creeper Infused Log
+tile.spider_infused_log.name=Spider Infused Log
+tile.enderman_infused_log.name=Enderman Infused Log
+tile.witch_infused_log.name=Witch Infused Log
+tile.silverfish_infused_log.name=Silverfish Infused Log
+tile.slime_infused_log.name=Slime Infused Log
+tile.blaze_infused_log.name=Blaze Infused Log
+tile.ghast_infused_log.name=Ghast Infused Log
+tile.zombie_pigman_infused_log.name=Zombie Pigman Infused Log
+tile.magma_cube_infused_log.name=Magma Cube Infused Log
+# Totem Heads
+tile.zombie_totem.name=Zombie Totem Head
+tile.skeleton_totem.name=Skeleton Totem Head
+tile.creeper_totem.name=Creeper Totem Head
+tile.spider_totem.name=Spider Totem Head
+tile.enderman_totem.name=Enderman Totem Head
+tile.witch_totem.name=Witch Totem Head
+tile.silverfish_totem.name=Silverfish Totem Head
+tile.slime_totem.name=Slime Totem Head
+tile.blaze_totem.name=Blaze Totem Head
+tile.ghast_totem.name=Ghast Totem Head
+tile.zombie_pigman_totem.name=Zombie Pigman Totem Head
+tile.magma_cube_totem.name=Magma Cube Totem Head
+# Functional Totems
 
 # Items
 item.carving_tool.name=Carving Tool

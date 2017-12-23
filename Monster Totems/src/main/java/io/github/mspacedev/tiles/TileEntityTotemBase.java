@@ -7,6 +7,7 @@ import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
@@ -93,5 +94,53 @@ public class TileEntityTotemBase extends TileEntity {
         hasGhast = false;
         hasZombiePigman = false;
         hasMagmaCube = false;
+    }
+
+    @Override
+    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+        super.writeToNBT(compound);
+        compound.setBoolean("hasZombie", this.hasZombie);
+        compound.setBoolean("hasSkeleton", this.hasSkeleton);
+        compound.setBoolean("hasCreeper", this.hasCreeper);
+        compound.setBoolean("hasSpider", this.hasSpider);
+        compound.setBoolean("hasEnderman", this.hasEnderman);
+        compound.setBoolean("hasWitch", this.hasWitch);
+        compound.setBoolean("hasSilverfish", this.hasSilverfish);
+        compound.setBoolean("hasSlime", this.hasSlime);
+        compound.setBoolean("hasBlaze", this.hasBlaze);
+        compound.setBoolean("hasZombiePigman", this.hasZombiePigman);
+        compound.setBoolean("hasGhast", this.hasGhast);
+        compound.setBoolean("hasMagmaCube", this.hasMagmaCube);
+        return compound;
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound compound) {
+        Utils.getLogger().info("hasZombie:          " + hasZombie);
+        this.hasZombie = compound.getBoolean("hasZombie");
+        this.hasSkeleton = compound.getBoolean("hasSkeleton");
+        this.hasCreeper = compound.getBoolean("hasCreeper");
+        this.hasSpider = compound.getBoolean("hasSpider");
+        this.hasEnderman = compound.getBoolean("hasEnderman");
+        this.hasWitch = compound.getBoolean("hasWitch");
+        this.hasSilverfish = compound.getBoolean("hasSilverfish");
+        this.hasSlime = compound.getBoolean("hasSlime");
+        this.hasBlaze = compound.getBoolean("hasBlaze");
+        this.hasZombiePigman = compound.getBoolean("hasZombiePigman");
+        this.hasGhast = compound.getBoolean("hasGhast");
+        this.hasMagmaCube = compound.getBoolean("hasMagmaCube");
+        Utils.getLogger().info("hasZombie:          " + hasZombie);
+        Utils.getLogger().info("hasSkeleton:        " + hasSkeleton);
+        Utils.getLogger().info("hasCreeper:         " + hasCreeper);
+        Utils.getLogger().info("hasSpider:          " + hasSpider);
+        Utils.getLogger().info("hasEnderman:        " + hasEnderman);
+        Utils.getLogger().info("hasWitch:           " + hasWitch);
+        Utils.getLogger().info("hasSilverfish:      " + hasSilverfish);
+        Utils.getLogger().info("hasSlime:           " + hasSlime);
+        Utils.getLogger().info("hasBlaze:           " + hasBlaze);
+        Utils.getLogger().info("hasZombiePigman:    " + hasZombiePigman);
+        Utils.getLogger().info("hasGhast:           " + hasGhast);
+        Utils.getLogger().info("hasMagmaCube:       " + hasMagmaCube);
+        super.readFromNBT(compound);
     }
 }

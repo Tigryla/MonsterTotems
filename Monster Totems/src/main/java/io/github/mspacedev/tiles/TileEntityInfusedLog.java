@@ -1,7 +1,6 @@
 package io.github.mspacedev.tiles;
 
 import io.github.mspacedev.blocks.ModBlocks;
-import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
@@ -14,10 +13,13 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityInfusedLog extends TileEntity {
     private int carveAmount = 0;
 
+    public TileEntityInfusedLog() {
+    }
+
     public void convertToTotemHead() {
         Block infusedLog = getWorld().getBlockState(pos).getBlock();
         carveAmount++;
-        Utils.getLogger().info("Carved on server?");
+
         if(carveAmount >= 3) {
             createTotem(infusedLog);
         }
@@ -49,6 +51,5 @@ public class TileEntityInfusedLog extends TileEntity {
         } else if (infusedLog == ModBlocks.magma_cube_infused_log) {
             getWorld().setBlockState(pos, ModBlocks.magma_cube_totem.getDefaultState());
         }
-        Utils.getLogger().info("Totem created on server?");
     }
 }

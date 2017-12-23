@@ -1,0 +1,11 @@
+{
+  "blocks.convert_log": {
+    "category": "blocks",
+    "sounds": [
+      {
+        "name": "monstertotems:blocks/convert_log",
+        "stream": "true"
+      }
+    ]
+  }
+}

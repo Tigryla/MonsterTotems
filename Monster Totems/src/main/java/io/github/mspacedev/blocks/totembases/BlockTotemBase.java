@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
 public class BlockTotemBase extends BlockWoodBase {
     public BlockTotemBase(String name, Material materialIn) {
         super(name, materialIn);
+        tooltipText.add("Required for totem heads to work and");
+        tooltipText.add("determines affected radius");
     }
 
     @Override

@@ -15,16 +15,10 @@ import javax.annotation.Nullable;
  * https://mspace-dev.github.io
  */
 
-public class BlockMagmaCubeInfusedLog extends BlockWoodBase implements ITileEntityProvider{
+public class BlockMagmaCubeInfusedLog extends BlockInfusedLog {
     public BlockMagmaCubeInfusedLog(String name, Material materialIn) {
         super(name, materialIn);
         tooltipText.add("Carve with the Carving Tool to create");
         tooltipText.add("a Magma Cube Totem Head");
-    }
-
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityInfusedLog();
     }
 }

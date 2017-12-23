@@ -18,8 +18,6 @@ import javax.annotation.Nullable;
 public class BlockTotemBaseIII extends BlockTotemBase implements ITileEntityProvider {
     public BlockTotemBaseIII(String name, Material materialIn) {
         super(name, materialIn);
-        tooltipText.add("Required for totems to work and");
-        tooltipText.add("determines affected radius");
         tooltipText.add("§bRadius: 192 blocks");
     }
 

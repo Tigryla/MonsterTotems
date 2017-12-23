@@ -15,16 +15,10 @@ import javax.annotation.Nullable;
  * https://mspace-dev.github.io
  */
 
-public class BlockEndermanInfusedLog extends BlockWoodBase implements ITileEntityProvider{
+public class BlockEndermanInfusedLog extends BlockInfusedLog {
     public BlockEndermanInfusedLog(String name, Material materialIn) {
         super(name, materialIn);
         tooltipText.add("Carve with the Carving Tool to create");
         tooltipText.add("a Enderman Totem Head");
-    }
-
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityInfusedLog();
     }
 }

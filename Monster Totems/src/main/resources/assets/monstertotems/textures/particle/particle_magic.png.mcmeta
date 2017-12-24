@@ -1,0 +1,8 @@
+{
+  "animation": {
+    "interpolate": true
+  },
+  "texture": {
+	"blur": true
+  }
+}

@@ -32,14 +32,19 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void genMagicParticle(Block block, BlockPos pos) {
+    public void genMagicParticle(Block block, BlockPos pos, float r, float g, float b) {
         World world = Minecraft.getMinecraft().world;
+
+        // Convert 255 RGB to 0-1 RGB notation
+        r /= 255;
+        g /= 255;
+        b /= 255;
 
         double rand = world.rand.nextDouble();
         double d1 = pos.getX() + 0.5;
         double d2 = pos.getY() + 0.5;
         double d3 = pos.getZ() + 0.5;
-        ParticleMagic particleMagic = new ParticleMagic(world, d1, d2, d3, rand * 0.4D, 0.7D, rand * 0.4D);
+        ParticleMagic particleMagic = new ParticleMagic(world, d1, d2, d3, r, g, b);
         Minecraft.getMinecraft().effectRenderer.addEffect(particleMagic);
     }
 }

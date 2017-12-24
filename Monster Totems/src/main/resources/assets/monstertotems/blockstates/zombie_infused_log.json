@@ -1,5 +1,6 @@
+
 {
-  "variants": {
-    "normal": { "model": "monstertotems:zombie_infused_log" }
-  }
+    "variants": {
+        "normal": { "model": "monstertotems:zombie_infused_log"}
+    }
 }

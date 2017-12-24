@@ -33,7 +33,7 @@ public class CommonProxy {
         Utils.getLogger().info("MONSTER TOTEMS READY TO GO, SINCE 2017!");
     }
 
-    public void genMagicParticle(Block block, BlockPos pos) {
+    public void genMagicParticle(Block block, BlockPos pos, float colorRed, float colorGreen, float colorBlue) {
 
     }
 }

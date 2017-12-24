@@ -1,6 +1,7 @@
+
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "monstertotems:blocks/infused_log"
-  }
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "monstertotems:blocks/infused_logs/zombie_infused_log"
+    }
 }

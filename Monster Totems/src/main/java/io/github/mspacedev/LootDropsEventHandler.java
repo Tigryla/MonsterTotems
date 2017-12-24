@@ -56,7 +56,7 @@ public class LootDropsEventHandler {
         List<EntityItem> mobDrops = event.getDrops();
         int lootingLevel = event.getLootingLevel() + 1;
         int dropChance = lootingLevel * 6;
-        Entity killerEntity = event.getSource().getSourceOfDamage();
+        Entity killerEntity = event.getSource().getTrueSource();
 
         if(killerEntity instanceof EntityLivingBase) {
             EntityLivingBase killer = (EntityLivingBase) killerEntity;

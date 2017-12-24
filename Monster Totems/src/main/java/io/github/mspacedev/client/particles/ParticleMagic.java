@@ -1,9 +1,14 @@
 package io.github.mspacedev.client.particles;
 
 import io.github.mspacedev.RegistryEventHandler;
+import io.github.mspacedev.blocks.ModBlocks;
+import io.github.mspacedev.tiles.TileEntityInfusedLog;
+import io.github.mspacedev.utils.Utils;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -17,52 +22,64 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 
 public class ParticleMagic extends Particle {
-    private float xyIncrement;
-    private float zIncrement;
     private float orbitDistance;
-
     private float xyAngle;
     private float zAngle;
+    private float fadeSpeed;
+    private float fadeStartAge;
 
     private final double xCoord;
     private final double yCoord;
     private final double zCoord;
+    private final BlockPos pos;
 
-    public ParticleMagic(World worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double xSpeedIn, double ySpeedIn, double zSpeedIn) {
-        super(worldIn, xCoordIn, yCoordIn, zCoordIn, xSpeedIn, ySpeedIn, zSpeedIn);
-        this.particleRed = 0.2f;
-        this.particleGreen = 1;
-        this.particleBlue = 0.2f;
+    private double speedRand;
+    private double alphaRand;
+    private double spawnRand;
+
+    private boolean hasReachedAlphaMax;
+
+    public ParticleMagic(World worldIn, double xCoordIn, double yCoordIn, double zCoordIn, float colorRed, float colorGreen, float colorBlue) {
+        super(worldIn, xCoordIn, yCoordIn, zCoordIn);
+        this.particleRed = colorRed;
+        this.particleGreen = colorGreen;
+        this.particleBlue = colorBlue;
+        this.particleGravity = 0.0f;
         this.particleMaxAge = 100;
+        this.particleAlpha = 0.0f;
+        this.fadeSpeed = 0.025f;
+        this.fadeStartAge = this.particleMaxAge - (1.0f / fadeSpeed);
+        this.orbitDistance = (float) ThreadLocalRandom.current().nextDouble(0.8D, 1.0D);
 
-        this.particleAlpha = (float) ThreadLocalRandom.current().nextDouble(0.5, 1.0);
-        this.orbitDistance = (float) ThreadLocalRandom.current().nextDouble(1.0, 1.2);
+        this.speedRand = (float) ThreadLocalRandom.current().nextDouble(0.2D, 0.4D);
+        this.alphaRand = (float) ThreadLocalRandom.current().nextDouble(0.5D, 0.8D);
+        this.spawnRand = (float) ThreadLocalRandom.current().nextDouble(0D, 3.142D * 2D);
+
+        this.posX = xCoordIn + (orbitDistance * Math.cos(spawnRand) * Math.sin(spawnRand));
+        this.posY = yCoordIn + (orbitDistance * Math.sin(spawnRand) * Math.sin(spawnRand));
+        this.posZ = zCoordIn + (orbitDistance * Math.cos(spawnRand));
 
         this.xCoord = xCoordIn;
         this.yCoord = yCoordIn;
         this.zCoord = zCoordIn;
+        this.pos = new BlockPos(xCoordIn, yCoordIn, zCoordIn);
 
         this.setParticleTexture(RegistryEventHandler.textureAtlasSprite);
     }
 
     @Override
-    public boolean isTransparent() {
+    public boolean shouldDisableDepth() {
         return true;
     }
 
     @Override
     public void move(double x, double y, double z) {
-        float rand = (float) ThreadLocalRandom.current().nextDouble(0.2, 0.8);
+        xyAngle += 0.125f * speedRand;
+        zAngle += 0.25f * speedRand;
 
-        xyAngle += 0.125f * rand;
-        zAngle += 0.25f * rand;
-
-        this.posX = xCoord + (orbitDistance * Math.cos(xyAngle) * Math.sin(zAngle));
-        this.posY = yCoord + (orbitDistance * Math.sin(xyAngle) * Math.sin(zAngle));
-        this.posZ = zCoord + (orbitDistance * Math.cos(zAngle));
-        if(this.particleAlpha > 0.01f) {
-            this.particleAlpha -= 0.01f;
-        }
+        this.posX = xCoord + (orbitDistance * Math.cos(spawnRand + xyAngle) * Math.sin(spawnRand + zAngle));
+        this.posY = yCoord + (orbitDistance * Math.sin(spawnRand + xyAngle) * Math.sin(spawnRand + zAngle));
+        this.posZ = zCoord + (orbitDistance * Math.cos(spawnRand + zAngle));
     }
 
     @Override
@@ -101,9 +118,9 @@ public class ParticleMagic extends Particle {
         {
             float f8 = this.particleAngle + (this.particleAngle - this.prevParticleAngle) * partialTicks;
             float f9 = MathHelper.cos(f8 * 0.5F);
-            float f10 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.xCoord;
-            float f11 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.yCoord;
-            float f12 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.zCoord;
+            float f10 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.x;
+            float f11 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.y;
+            float f12 = MathHelper.sin(f8 * 0.5F) * (float)cameraViewDir.z;
             Vec3d vec3d = new Vec3d((double)f10, (double)f11, (double)f12);
 
             for (int l = 0; l < 4; ++l)
@@ -112,14 +129,31 @@ public class ParticleMagic extends Particle {
             }
         }
 
-        buffer.pos((double)f5 + avec3d[0].xCoord, (double)f6 + avec3d[0].yCoord, (double)f7 + avec3d[0].zCoord).tex((double)f1, (double)f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-        buffer.pos((double)f5 + avec3d[1].xCoord, (double)f6 + avec3d[1].yCoord, (double)f7 + avec3d[1].zCoord).tex((double)f1, (double)f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-        buffer.pos((double)f5 + avec3d[2].xCoord, (double)f6 + avec3d[2].yCoord, (double)f7 + avec3d[2].zCoord).tex((double)f, (double)f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-        buffer.pos((double)f5 + avec3d[3].xCoord, (double)f6 + avec3d[3].yCoord, (double)f7 + avec3d[3].zCoord).tex((double)f, (double)f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+        buffer.pos((double)f5 + avec3d[0].x, (double)f6 + avec3d[0].y, (double)f7 + avec3d[0].z).tex((double)f1, (double)f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+        buffer.pos((double)f5 + avec3d[1].x, (double)f6 + avec3d[1].y, (double)f7 + avec3d[1].z).tex((double)f1, (double)f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+        buffer.pos((double)f5 + avec3d[2].x, (double)f6 + avec3d[2].y, (double)f7 + avec3d[2].z).tex((double)f, (double)f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+        buffer.pos((double)f5 + avec3d[3].x, (double)f6 + avec3d[3].y, (double)f7 + avec3d[3].z).tex((double)f, (double)f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
     }
 
     @Override
     public int getFXLayer() {
         return 1;
+    }
+
+    @Override
+    public void onUpdate() {
+        // Fades in and out particle
+        if(particleAlpha < alphaRand && !hasReachedAlphaMax) {
+            particleAlpha += fadeSpeed;
+            if(particleAlpha >= alphaRand) { // When max alpha is reached, stop adding alpha
+                hasReachedAlphaMax = true;
+            }
+        } else if ((particleAge > fadeStartAge && particleAlpha >= 0)) {
+            particleAlpha -= fadeSpeed;
+        } else if (world.getTileEntity(pos) == null && particleAlpha >= fadeSpeed) {
+            particleAlpha -= fadeSpeed;
+        }
+
+        super.onUpdate();
     }
 }

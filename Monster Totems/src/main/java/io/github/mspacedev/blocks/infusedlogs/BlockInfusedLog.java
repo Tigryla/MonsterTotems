@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -29,13 +30,6 @@ public class BlockInfusedLog extends BlockWoodBase implements ITileEntityProvide
     public BlockInfusedLog(String name, Material materialIn) {
         super(name, materialIn);
         this.setLightLevel(0.5f);
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        MonsterTotems.proxy.genMagicParticle(this, pos);
-        super.randomDisplayTick(stateIn, worldIn, pos, rand);
     }
 
     @Override

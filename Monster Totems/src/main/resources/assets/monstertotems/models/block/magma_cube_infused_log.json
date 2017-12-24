@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "monstertotems:blocks/infused_logs/magma_cube_infused_log"
+    }
+}

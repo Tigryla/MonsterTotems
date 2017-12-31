@@ -35,7 +35,8 @@ public class ParticleMagic extends Particle {
 
     private double speedRand;
     private double alphaRand;
-    private double spawnRand;
+    private double spawnRand1;
+    private double spawnRand2;
 
     private boolean hasReachedAlphaMax;
 
@@ -53,11 +54,11 @@ public class ParticleMagic extends Particle {
 
         this.speedRand = (float) ThreadLocalRandom.current().nextDouble(0.2D, 0.4D);
         this.alphaRand = (float) ThreadLocalRandom.current().nextDouble(0.5D, 0.8D);
-        this.spawnRand = (float) ThreadLocalRandom.current().nextDouble(0D, 3.142D * 2D);
+        this.spawnRand1 = this.spawnRand2 = (float) ThreadLocalRandom.current().nextDouble(0D, 2 * Math.PI);
 
-        this.posX = xCoordIn + (orbitDistance * Math.cos(spawnRand) * Math.sin(spawnRand));
-        this.posY = yCoordIn + (orbitDistance * Math.sin(spawnRand) * Math.sin(spawnRand));
-        this.posZ = zCoordIn + (orbitDistance * Math.cos(spawnRand));
+        this.posX = xCoordIn + (orbitDistance * Math.cos(spawnRand1) * Math.sin(spawnRand2));
+        this.posY = yCoordIn + (orbitDistance * Math.sin(spawnRand1) * Math.sin(spawnRand2));
+        this.posZ = zCoordIn + (orbitDistance * Math.cos(spawnRand2));
 
         this.xCoord = xCoordIn;
         this.yCoord = yCoordIn;
@@ -77,9 +78,9 @@ public class ParticleMagic extends Particle {
         xyAngle += 0.125f * speedRand;
         zAngle += 0.25f * speedRand;
 
-        this.posX = xCoord + (orbitDistance * Math.cos(spawnRand + xyAngle) * Math.sin(spawnRand + zAngle));
-        this.posY = yCoord + (orbitDistance * Math.sin(spawnRand + xyAngle) * Math.sin(spawnRand + zAngle));
-        this.posZ = zCoord + (orbitDistance * Math.cos(spawnRand + zAngle));
+        this.posX = xCoord + (orbitDistance * Math.cos(spawnRand1 + xyAngle) * Math.sin(spawnRand2 + zAngle));
+        this.posY = yCoord + (orbitDistance * Math.sin(spawnRand1 + xyAngle) * Math.sin(spawnRand2 + zAngle));
+        this.posZ = zCoord + (orbitDistance * Math.cos(spawnRand2 + zAngle));
     }
 
     @Override

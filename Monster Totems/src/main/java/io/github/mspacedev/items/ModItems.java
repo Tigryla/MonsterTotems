@@ -1,6 +1,6 @@
 package io.github.mspacedev.items;
 
-import io.github.mspacedev.items.spirits.ItemZombieSpirit;
+import io.github.mspacedev.items.spirits.*;
 import io.github.mspacedev.items.tools.ItemCarvingTool;
 import io.github.mspacedev.items.tools.ItemSpiritKnife;
 import net.minecraft.item.Item;
@@ -22,6 +22,17 @@ public class ModItems {
 
     // Mob Spirits
     public static final Item zombie_spirit = new ItemZombieSpirit("zombie_spirit");
+    public static final Item skeleton_spirit = new ItemSkeletonSpirit("skeleton_spirit");
+    public static final Item creeper_spirit = new ItemCreeperSpirit("creeper_spirit");
+    public static final Item spider_spirit = new ItemSpiderSpirit("spider_spirit");
+    public static final Item enderman_spirit = new ItemEndermanSpirit("enderman_spirit");
+    public static final Item witch_spirit = new ItemWitchSpirit("witch_spirit");
+    public static final Item silverfish_spirit = new ItemSilverfishSpirit("silverfish_spirit");
+    public static final Item slime_spirit = new ItemSlimeSpirit("slime_spirit");
+    public static final Item blaze_spirit = new ItemBlazeSpirit("blaze_spirit");
+    public static final Item zombie_pigman_spirit = new ItemZombiePigmanSpirit("zombie_pigman_spirit");
+    public static final Item ghast_spirit = new ItemGhastSpirit("ghast_spirit");
+    public static final Item magma_cube_spirit = new ItemMagmaCubeSpirit("magma_cube_spirit");
 
     public static Item ITEMS[] = {
             // Tools
@@ -31,6 +42,17 @@ public class ModItems {
             spirit_powder,
             spirit_ingot,
             // Mob Spirits
-            zombie_spirit
+            zombie_spirit,
+            skeleton_spirit,
+            creeper_spirit,
+            spider_spirit,
+            enderman_spirit,
+            witch_spirit,
+            silverfish_spirit,
+            slime_spirit,
+            blaze_spirit,
+            zombie_pigman_spirit,
+            ghast_spirit,
+            magma_cube_spirit
     };
 }

@@ -3,6 +3,7 @@ package io.github.mspacedev.items.tools;
 import io.github.mspacedev.tiles.TileEntityInfusedLog;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -22,7 +23,7 @@ public class ItemCarvingTool extends ItemAxeBase {
         super(name, material, damage, speed);
         this.setMaxDamage(160);
         this.setMaxStackSize(1);
-        tooltipText.add("Use on infused logs to carve them into totem heads");
+        tooltipText.add(I18n.format("tooltip.carving_tool"));
     }
 
     @Override

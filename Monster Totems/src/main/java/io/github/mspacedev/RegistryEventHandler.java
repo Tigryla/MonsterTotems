@@ -51,7 +51,6 @@ public class RegistryEventHandler {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event){
         event.getRegistry().registerAll(ModBlocks.BLOCKS);
-
         Utils.getLogger().info("Monster Totems Blocks Registered");
     }
 

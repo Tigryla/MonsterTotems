@@ -116,7 +116,6 @@ public class TileEntityTotemBase extends TileEntity {
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
-        Utils.getLogger().info("hasZombie:          " + hasZombie);
         this.hasZombie = compound.getBoolean("hasZombie");
         this.hasSkeleton = compound.getBoolean("hasSkeleton");
         this.hasCreeper = compound.getBoolean("hasCreeper");
@@ -129,18 +128,6 @@ public class TileEntityTotemBase extends TileEntity {
         this.hasZombiePigman = compound.getBoolean("hasZombiePigman");
         this.hasGhast = compound.getBoolean("hasGhast");
         this.hasMagmaCube = compound.getBoolean("hasMagmaCube");
-        Utils.getLogger().info("hasZombie:          " + hasZombie);
-        Utils.getLogger().info("hasSkeleton:        " + hasSkeleton);
-        Utils.getLogger().info("hasCreeper:         " + hasCreeper);
-        Utils.getLogger().info("hasSpider:          " + hasSpider);
-        Utils.getLogger().info("hasEnderman:        " + hasEnderman);
-        Utils.getLogger().info("hasWitch:           " + hasWitch);
-        Utils.getLogger().info("hasSilverfish:      " + hasSilverfish);
-        Utils.getLogger().info("hasSlime:           " + hasSlime);
-        Utils.getLogger().info("hasBlaze:           " + hasBlaze);
-        Utils.getLogger().info("hasZombiePigman:    " + hasZombiePigman);
-        Utils.getLogger().info("hasGhast:           " + hasGhast);
-        Utils.getLogger().info("hasMagmaCube:       " + hasMagmaCube);
         super.readFromNBT(compound);
     }
 }

@@ -1,9 +1,9 @@
-#English GB
+# English GB
 
-# Creative Tab
+## Creative Tab ##
 itemGroup.monstertotems=Monster Totems
 
-# Blocks
+#### Blocks ####
 # Totem Bases
 tile.totem_base_i.name=Totem Base Tier I
 tile.totem_base_ii.name=Totem Base Tier II
@@ -36,6 +36,81 @@ tile.zombie_pigman_totem.name=Zombie Pigman Totem Head
 tile.magma_cube_totem.name=Magma Cube Totem Head
 # Functional Totems
 
-# Items
+#### Items ####
+# Tools
 item.carving_tool.name=Carving Tool
+item.spirit_knife.name=Spirit Knife
+# Spirits
+item.zombie_spirit.name=Zombie Spirit
+item.skeleton_spirit.name=Skeleton Spirit
+item.creeper_spirit.name=Creeper Spirit
+item.spider_spirit.name=Spider Spirit
+item.enderman_spirit.name=Enderman Spirit
+item.witch_spirit.name=Witch Spirit
+item.silverfish_spirit.name=Silverfish Spirit
+item.slime_spirit.name=Slime Spirit
+item.blaze_spirit.name=Blaze Spirit
+item.zombie_pigman_spirit.name=Zombie Pigman Spirit
+item.ghast_spirit.name=Ghast Spirit
+item.magma_cube_spirit.name=Magma Cube Spirit
+# Ingot
+item.spirit_powder.name=Spirit Powder
+item.spirit_ingot.name=Spirit Ingot
 
+#### Tooltips ####
+# Spirit Powder
+tooltip.spirit_powder0=A mysterious, hard compressed powder found in diamond ore
+tooltip.spirit_powder1=§bDrop rates affected by fortune
+
+# Spirit Knife
+tooltip.spirit_knife0=A mysterious blade that seems to drop monster's spirits upon their death
+tooltip.spirit_knife1=§bDrop rates affected by looting
+
+# Spirit Ingot
+tooltip.spirit_ingot=An unusual element that is created by smelting Spirit Powder
+
+# Carving Tool
+tooltip.carving_tool=Use on Infused Logs to carve them into Totem Heads
+
+# Spirit
+tooltip.spirit=Right click on a log to infuse this spirit into it
+
+# Infused Logs
+tooltip.zombie_infused_log=Carve with the Carving Tool to create a Zombie Totem Head
+tooltip.skeleton_infused_log=Carve with the Carving Tool to create a Skeleton Totem Head
+tooltip.creeper_infused_log=Carve with the Carving Tool to create a Creeper Totem Head
+tooltip.spider_infused_log=Carve with the Carving Tool to create a Spider Totem Head
+tooltip.enderman_infused_log=Carve with the Carving Tool to create a Enderman Totem Head
+tooltip.witch_infused_log=Carve with the Carving Tool to create a Witch Totem Head
+tooltip.silverfish_infused_log=Carve with the Carving Tool to create a Silverfish Totem Head
+tooltip.slime_infused_log=Carve with the Carving Tool to create a Slime Totem Head
+tooltip.blaze_infused_log=Carve with the Carving Tool to create a Blaze Totem Head
+tooltip.zombie_pigman_infused_log=Carve with the Carving Tool to create a Zombie Pigman Totem Head
+tooltip.ghast_infused_log=Carve with the Carving Tool to create a Ghast Totem Head
+tooltip.magma_cube_infused_log=Carve with the Carving Tool to create a Magma Cube Totem Head
+
+# Totem Heads
+tooltip.zombie_totem=Stops Zombies and Husks from spawning when placed on a totem base
+tooltip.skeleton_totem=Stops Skeletons, Wither Skeletons and Strays from spawning when placed on a totem base
+tooltip.creeper_totem=Stops Creepers from spawning when placed on a totem base
+tooltip.spider_totem=Stops Spiders from spawning when placed on a totem base
+tooltip.enderman_totem=Stops Endermen from spawning when placed on a totem base
+tooltip.witch_totem=Stops Witches from spawning when placed on a totem base
+tooltip.silverfish_totem=Stops Silverfish from spawning when placed on a totem base
+tooltip.slime_totem=Stops Slimes from spawning when placed on a totem base
+tooltip.blaze_totem=Stops Blazes from spawning when placed on a totem base
+tooltip.zombie_pigman_totem=Stops Zombie Pigmen from spawning when placed on a totem base
+tooltip.ghast_totem=Stops Ghasts from spawning when placed on a totem base
+tooltip.magma_cube_totem=Stops Magma Cubes from spawning when placed on a totem base
+
+# Totem Bases
+tooltip.totem_base=Required for totem heads to work and determines affected radius
+
+# Totem Base I
+tooltip.totem_base_i=§bRadius: 64 blocks
+
+# Totem Base II
+tooltip.totem_base_ii=§bRadius: 128 blocks
+
+# Totem Base III
+tooltip.totem_base_iii=§bRadius: 192 blocks

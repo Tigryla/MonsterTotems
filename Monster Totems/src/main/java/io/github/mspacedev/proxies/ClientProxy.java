@@ -40,7 +40,6 @@ public class ClientProxy extends CommonProxy {
         g /= 255;
         b /= 255;
 
-        double rand = world.rand.nextDouble();
         double d1 = pos.getX() + 0.5;
         double d2 = pos.getY() + 0.5;
         double d3 = pos.getZ() + 0.5;

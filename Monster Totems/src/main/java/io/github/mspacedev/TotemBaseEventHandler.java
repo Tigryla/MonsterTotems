@@ -1,23 +1,14 @@
 package io.github.mspacedev;
 
-import com.google.common.collect.Iterables;
 import io.github.mspacedev.tiles.TileEntityTotemBase;
 import io.github.mspacedev.tiles.TileEntityTotemBaseI;
 import io.github.mspacedev.tiles.TileEntityTotemBaseII;
 import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
-import io.github.mspacedev.utils.Utils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.*;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
-import net.minecraftforge.event.entity.player.UseHoeEvent;
-import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

@@ -19,7 +19,7 @@ import java.util.List;
  * https://mspace-dev.github.io
  */
 
-public class BlockBase extends Block{
+public class BlockBase extends Block {
     protected ArrayList<String> tooltipText = new ArrayList<>();
 
     public BlockBase(String name, Material materialIn) {

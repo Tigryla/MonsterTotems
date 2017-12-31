@@ -1,9 +1,9 @@
 package io.github.mspacedev.blocks.totembases;
 
-import io.github.mspacedev.blocks.BlockWoodBase;
 import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 public class BlockTotemBaseIII extends BlockTotemBase implements ITileEntityProvider {
     public BlockTotemBaseIII(String name, Material materialIn) {
         super(name, materialIn);
-        tooltipText.add("§bRadius: 192 blocks");
+        tooltipText.add(I18n.format("tooltip.totem_base_iii"));
     }
 
     @Nullable

@@ -1,0 +1,7 @@
+
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "monstertotems:items/mob_spirits/zombie_spirit"
+    }
+}

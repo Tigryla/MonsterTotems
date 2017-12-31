@@ -1,18 +1,14 @@
 package io.github.mspacedev.blocks.infusedlogs;
 
 import io.github.mspacedev.MonsterTotems;
-import io.github.mspacedev.blocks.BlockWoodBase;
-import io.github.mspacedev.tiles.TileEntityInfusedLog;
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
 /**
@@ -24,8 +20,7 @@ import java.util.Random;
 public class BlockSkeletonInfusedLog extends BlockInfusedLog {
     public BlockSkeletonInfusedLog(String name, Material materialIn) {
         super(name, materialIn);
-        tooltipText.add("Carve with the Carving Tool to create");
-        tooltipText.add("a Skeleton Totem Head");
+        tooltipText.add(I18n.format("tooltip.skeleton_infused_log"));
     }
 
     @SideOnly(Side.CLIENT)

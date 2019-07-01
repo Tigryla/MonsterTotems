@@ -1,4 +1,4 @@
-package io.github.mspacedev;
+package io.github.mspacedev.utils;
 
 import java.util.ArrayList;
 

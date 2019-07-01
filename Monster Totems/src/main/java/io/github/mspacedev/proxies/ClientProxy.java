@@ -1,6 +1,8 @@
 package io.github.mspacedev.proxies;
 
 import io.github.mspacedev.client.particles.ParticleMagic;
+import io.github.mspacedev.handlers.RenderEventHandler;
+import io.github.mspacedev.init.InitEntities;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +20,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event){
-
+        RenderEventHandler.registerEntityRenders();
     }
 
     @Override

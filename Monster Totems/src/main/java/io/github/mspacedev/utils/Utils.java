@@ -1,6 +1,5 @@
 package io.github.mspacedev.utils;
 
-import io.github.mspacedev.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

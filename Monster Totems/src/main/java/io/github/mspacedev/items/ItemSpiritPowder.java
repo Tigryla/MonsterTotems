@@ -12,6 +12,7 @@ public class ItemSpiritPowder extends ItemBase {
     public ItemSpiritPowder(String name) {
         super(name);
         tooltipText.add(I18n.format("tooltip.spirit_powder0"));
-        tooltipText.add(I18n.format("tooltip.spirit_powder1"));
     }
+
+
 }

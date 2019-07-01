@@ -1,15 +1,11 @@
 package io.github.mspacedev.tiles;
 
-import com.sun.istack.internal.NotNull;
-import io.github.mspacedev.TotemBaseEventHandler;
 import io.github.mspacedev.blocks.ModBlocks;
-import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 
 /**

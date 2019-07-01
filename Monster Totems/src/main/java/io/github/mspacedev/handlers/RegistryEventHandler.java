@@ -1,5 +1,6 @@
-package io.github.mspacedev;
+package io.github.mspacedev.handlers;
 
+import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.items.ModItems;
 import io.github.mspacedev.utils.Utils;
@@ -32,33 +33,39 @@ public class RegistryEventHandler {
     private static final ResourceLocation convertLogRL = new ResourceLocation(Reference.MODID, "blocks.convert_log");
 
     @SubscribeEvent
-    public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+    public static void registerSounds(RegistryEvent.Register<SoundEvent> event)
+	{
         convert_log = new SoundEvent(convertLogRL).setRegistryName(convertLogRL);
         registerSound(convert_log, event);
     }
 
     @SubscribeEvent
-    public static void registerParticleMap(TextureStitchEvent.Pre event) {
+    public static void registerParticleMap(TextureStitchEvent.Pre event)
+	{
         TextureMap map = event.getMap();
         textureAtlasSprite = map.registerSprite(new ResourceLocation(Reference.MODID, "particle/particles"));
     }
 
-    private static void registerSound(SoundEvent soundID, RegistryEvent.Register<SoundEvent> event) {
+    private static void registerSound(SoundEvent soundID, RegistryEvent.Register<SoundEvent> event)
+	{
         Utils.getLogger().info(soundID + " loaded");
         event.getRegistry().register(soundID);
     }
 
     @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event){
+    public static void registerBlocks(RegistryEvent.Register<Block> event)
+	{
         event.getRegistry().registerAll(ModBlocks.BLOCKS);
         Utils.getLogger().info("Monster Totems Blocks Registered");
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event){
+    public static void registerItems(RegistryEvent.Register<Item> event)
+	{
         event.getRegistry().registerAll(ModItems.ITEMS);
 
-        for(Block block : ModBlocks.BLOCKS){
+        for(Block block : ModBlocks.BLOCKS)
+        {
             event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
         }
 
@@ -66,12 +73,15 @@ public class RegistryEventHandler {
     }
 
     @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event){
-        for(Block block : ModBlocks.BLOCKS){
+    public static void registerModels(ModelRegistryEvent event)
+	{
+        for(Block block : ModBlocks.BLOCKS)
+        {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
         }
 
-        for(Item item : ModItems.ITEMS){
+        for(Item item : ModItems.ITEMS)
+        {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
 

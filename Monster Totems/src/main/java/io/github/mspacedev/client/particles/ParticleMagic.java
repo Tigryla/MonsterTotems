@@ -1,13 +1,9 @@
 package io.github.mspacedev.client.particles;
 
-import io.github.mspacedev.RegistryEventHandler;
-import io.github.mspacedev.blocks.ModBlocks;
-import io.github.mspacedev.tiles.TileEntityInfusedLog;
-import io.github.mspacedev.utils.Utils;
+import io.github.mspacedev.handlers.RegistryEventHandler;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;

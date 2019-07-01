@@ -1,7 +1,7 @@
 package io.github.mspacedev.items.tools;
 
 import io.github.mspacedev.MonsterTotems;
-import io.github.mspacedev.Reference;
+import io.github.mspacedev.utils.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;

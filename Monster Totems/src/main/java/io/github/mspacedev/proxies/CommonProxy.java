@@ -1,8 +1,7 @@
 package io.github.mspacedev.proxies;
 
-import io.github.mspacedev.RegisterRecipes;
-import io.github.mspacedev.RegistryEventHandler;
-import io.github.mspacedev.tiles.ModTileEntities;
+import io.github.mspacedev.handlers.RenderEventHandler;
+import io.github.mspacedev.init.InitEntities;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
@@ -33,7 +32,5 @@ public class CommonProxy {
         Utils.getLogger().info("MONSTER TOTEMS READY TO GO, SINCE 2017!");
     }
 
-    public void genMagicParticle(Block block, BlockPos pos, float colorRed, float colorGreen, float colorBlue) {
-
-    }
+    public void genMagicParticle(Block block, BlockPos pos, float colorRed, float colorGreen, float colorBlue) {}
 }

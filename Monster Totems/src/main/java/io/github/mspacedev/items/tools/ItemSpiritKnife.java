@@ -12,6 +12,5 @@ public class ItemSpiritKnife extends ItemSwordBase {
     public ItemSpiritKnife(String name, ToolMaterial material) {
         super(name, material);
         tooltipText.add(I18n.format("tooltip.spirit_knife0"));
-        tooltipText.add(I18n.format("tooltip.spirit_knife1"));
     }
 }

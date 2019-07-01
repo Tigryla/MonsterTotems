@@ -1,6 +1,6 @@
 package io.github.mspacedev.items.spirits;
 
-import io.github.mspacedev.RegistryEventHandler;
+import io.github.mspacedev.handlers.RegistryEventHandler;
 import io.github.mspacedev.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;

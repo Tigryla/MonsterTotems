@@ -1,4 +1,4 @@
-package io.github.mspacedev;
+package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.tiles.TileEntityTotemBase;
 import io.github.mspacedev.tiles.TileEntityTotemBaseI;

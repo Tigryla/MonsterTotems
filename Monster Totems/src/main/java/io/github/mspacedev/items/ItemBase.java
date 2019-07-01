@@ -1,7 +1,7 @@
 package io.github.mspacedev.items;
 
 import io.github.mspacedev.MonsterTotems;
-import io.github.mspacedev.Reference;
+import io.github.mspacedev.utils.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**

@@ -1,4 +1,4 @@
-package io.github.mspacedev;
+package io.github.mspacedev.init;
 
 import io.github.mspacedev.items.ModItems;
 import io.github.mspacedev.utils.Utils;
@@ -12,7 +12,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * https://mspace-dev.github.io
  */
 
-public class RegisterRecipes {
+public class InitRecipes
+{
     public static void register() {
         registerRecipes();
         registerSmelting();

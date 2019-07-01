@@ -8,9 +8,11 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 /**
  * Copyright © MSpace-Dev 2017
@@ -20,10 +22,9 @@ import net.minecraft.world.World;
 
 public class ItemCarvingTool extends ItemAxeBase {
     public ItemCarvingTool(String name, ToolMaterial material, float damage, float speed) {
-        super(name, material, damage, speed);
+        super(name, material, damage, speed, "tooltip.carving_tool");
         this.setMaxDamage(160);
         this.setMaxStackSize(1);
-        tooltipText.add(I18n.format("tooltip.carving_tool"));
     }
 
     @Override

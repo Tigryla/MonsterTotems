@@ -17,7 +17,10 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Copyright © MSpace-Dev 2017
@@ -40,6 +43,7 @@ public class RegistryEventHandler {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void registerParticleMap(TextureStitchEvent.Pre event)
 	{
         TextureMap map = event.getMap();

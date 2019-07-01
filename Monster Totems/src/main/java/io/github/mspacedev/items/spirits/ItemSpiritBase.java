@@ -23,9 +23,8 @@ public class ItemSpiritBase extends ItemBase {
     private Block infusedLog;
 
     public ItemSpiritBase(String name, Block infusedLog) {
-        super(name);
+        super(name, "tooltip.spirit");
         this.infusedLog = infusedLog;
-        tooltipText.add(I18n.format("tooltip.spirit"));
     }
 
     protected void conversion(World world, BlockPos pos) {

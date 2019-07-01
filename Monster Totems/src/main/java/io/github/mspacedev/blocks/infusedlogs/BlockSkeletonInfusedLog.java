@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockSkeletonInfusedLog extends BlockInfusedLog {
     public BlockSkeletonInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.skeleton_infused_log"));
+        super(name, materialIn, "tooltip.skeleton_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockSlimeTotem extends BlockTotemHeadBase {
     public BlockSlimeTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.slime_totem"));
+        super(name, materialIn, "tooltip.slime_totem");
     }
 }

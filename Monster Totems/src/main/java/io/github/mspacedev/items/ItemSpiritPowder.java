@@ -10,8 +10,7 @@ import net.minecraft.client.resources.I18n;
 
 public class ItemSpiritPowder extends ItemBase {
     public ItemSpiritPowder(String name) {
-        super(name);
-        tooltipText.add(I18n.format("tooltip.spirit_powder0"));
+        super(name, "tooltip.spirit_powder");
     }
 
 

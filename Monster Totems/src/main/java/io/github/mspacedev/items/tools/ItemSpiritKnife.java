@@ -10,7 +10,6 @@ import net.minecraft.client.resources.I18n;
 
 public class ItemSpiritKnife extends ItemSwordBase {
     public ItemSpiritKnife(String name, ToolMaterial material) {
-        super(name, material);
-        tooltipText.add(I18n.format("tooltip.spirit_knife0"));
+        super(name, material, "tooltip.spirit_knife");
     }
 }

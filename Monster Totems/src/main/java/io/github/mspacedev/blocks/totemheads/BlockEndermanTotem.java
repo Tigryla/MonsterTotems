@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockEndermanTotem extends BlockTotemHeadBase {
     public BlockEndermanTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.enderman_totem"));
+        super(name, materialIn, "tooltip.enderman_totem");
     }
 }

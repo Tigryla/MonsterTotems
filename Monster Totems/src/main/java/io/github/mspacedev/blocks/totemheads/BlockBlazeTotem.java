@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockBlazeTotem extends BlockTotemHeadBase {
     public BlockBlazeTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.blaze_totem"));
+        super(name, materialIn, "tooltip.blaze_totem");
     }
 }

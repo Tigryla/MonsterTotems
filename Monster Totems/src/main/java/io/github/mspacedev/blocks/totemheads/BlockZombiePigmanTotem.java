@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockZombiePigmanTotem extends BlockTotemHeadBase {
     public BlockZombiePigmanTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.zombie_pigman_totem"));
+        super(name, materialIn, "tooltip.zombie_pigman_totem");
     }
 }

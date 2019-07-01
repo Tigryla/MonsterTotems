@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockCreeperTotem extends BlockTotemHeadBase {
     public BlockCreeperTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.creeper_totem"));
+        super(name, materialIn, "tooltip.creeper_totem");
     }
 }

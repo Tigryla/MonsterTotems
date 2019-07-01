@@ -17,4 +17,11 @@ public class BlockWoodBase extends BlockBase {
         this.setSoundType(SoundType.WOOD);
         setHarvestLevel("axe", 0);
     }
+
+    public BlockWoodBase(String name, Material materialIn, String tooltip) {
+        super(name, materialIn, tooltip);
+        this.setHardness(2.0f);
+        this.setSoundType(SoundType.WOOD);
+        setHarvestLevel("axe", 0);
+    }
 }

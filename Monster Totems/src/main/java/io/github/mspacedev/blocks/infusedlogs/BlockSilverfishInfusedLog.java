@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockSilverfishInfusedLog extends BlockInfusedLog {
     public BlockSilverfishInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.silverfish_infused_log"));
+        super(name, materialIn, "tooltip.silverfish_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

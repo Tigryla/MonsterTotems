@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockMagmaCubeTotem extends BlockTotemHeadBase {
     public BlockMagmaCubeTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.magma_cube_totem"));
+        super(name, materialIn, "tooltip.magma_cube_totem");
     }
 }

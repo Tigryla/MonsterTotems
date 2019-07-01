@@ -65,10 +65,10 @@ item.spirit_ingot.name=Spirit Ingot
 
 #### Tooltips ####
 # Spirit Powder
-tooltip.spirit_powder0=A mysterious, hard compressed powder
+tooltip.spirit_powder=A mysterious, hard compressed powder
 
 # Spirit Knife
-tooltip.spirit_knife0=A mysterious blade that seems to drop monster's spirits upon their death
+tooltip.spirit_knife=A mysterious blade that seems to drop monster's spirits upon their death
 
 # Spirit Ingot
 tooltip.spirit_ingot=An unusual element that is created by smelting Spirit Powder
@@ -78,6 +78,12 @@ tooltip.carving_tool=Use on Infused Logs to carve them into Totem Heads
 
 # Spirit
 tooltip.spirit=Right click on a log to infuse this spirit into it
+
+# Shift for Info
+tooltip.shift=Press SHIFT for more information
+
+# Missing tooltip
+tooltip.missing=No information provided! Contact Mod Author!
 
 # Infused Logs
 tooltip.zombie_infused_log=Carve with the Carving Tool to create a Zombie Totem Head

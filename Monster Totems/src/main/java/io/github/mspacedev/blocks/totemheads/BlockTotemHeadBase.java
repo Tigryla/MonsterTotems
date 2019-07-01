@@ -26,6 +26,10 @@ public class BlockTotemHeadBase extends BlockWoodBase {
         super(name, materialIn);
     }
 
+    public BlockTotemHeadBase(String name, Material materialIn, String tooltip) {
+        super(name, materialIn, tooltip);
+    }
+
     // Looks for totem bases below and sets totem properties based on what totem head it is.
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {

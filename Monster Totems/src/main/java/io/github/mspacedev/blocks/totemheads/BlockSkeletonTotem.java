@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockSkeletonTotem extends BlockTotemHeadBase {
     public BlockSkeletonTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.skeleton_totem"));
+        super(name, materialIn, "tooltip.skeleton_totem");
     }
 }

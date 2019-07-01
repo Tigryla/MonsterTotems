@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockZombieInfusedLog extends BlockInfusedLog {
     public BlockZombieInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.zombie_infused_log"));
+        super(name, materialIn, "tooltip.zombie_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

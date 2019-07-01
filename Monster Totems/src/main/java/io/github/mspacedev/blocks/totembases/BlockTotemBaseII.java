@@ -17,8 +17,7 @@ import javax.annotation.Nullable;
 
 public class BlockTotemBaseII extends BlockTotemBase implements ITileEntityProvider {
     public BlockTotemBaseII(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.totem_base_ii"));
+        super(name, materialIn, "tooltip.totem_base_ii");
     }
 
     @Nullable

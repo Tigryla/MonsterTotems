@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockCreeperInfusedLog extends BlockInfusedLog {
     public BlockCreeperInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.creeper_infused_log"));
+        super(name, materialIn, "tooltip.creeper_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

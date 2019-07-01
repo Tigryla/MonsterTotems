@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockMagmaCubeInfusedLog extends BlockInfusedLog {
     public BlockMagmaCubeInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.magma_cube_infused_log"));
+        super(name, materialIn, "tooltip.magma_cube_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

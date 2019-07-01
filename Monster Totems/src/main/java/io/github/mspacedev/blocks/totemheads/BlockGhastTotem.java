@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockGhastTotem extends BlockTotemHeadBase {
     public BlockGhastTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.ghast_totem"));
+        super(name, materialIn, "tooltip.ghast_totem");
     }
 }

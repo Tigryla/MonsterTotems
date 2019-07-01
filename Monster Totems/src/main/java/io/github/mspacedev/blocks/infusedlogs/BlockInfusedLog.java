@@ -21,6 +21,11 @@ public class BlockInfusedLog extends BlockWoodBase implements ITileEntityProvide
         this.setLightLevel(0.5f);
     }
 
+    public BlockInfusedLog(String name, Material materialIn, String tooltip) {
+        super(name, materialIn, tooltip);
+        this.setLightLevel(0.5f);
+    }
+
     @Nullable
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {

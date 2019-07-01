@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockWitchTotem extends BlockTotemHeadBase {
     public BlockWitchTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.witch_totem"));
+        super(name, materialIn, "tooltip.witch_totem");
     }
 }

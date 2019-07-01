@@ -10,8 +10,7 @@ import net.minecraft.client.resources.I18n;
 
 public class ItemSpiritIngot extends ItemBase {
     public ItemSpiritIngot(String name) {
-        super(name);
-        tooltipText.add(I18n.format("tooltip.spirit_ingot"));
+        super(name, "tooltip.spirit_ingot");
     }
 
 }

@@ -11,7 +11,6 @@ import net.minecraft.client.resources.I18n;
 
 public class BlockSilverfishTotem extends BlockTotemHeadBase {
     public BlockSilverfishTotem(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.silverfish_totem"));
+        super(name, materialIn, "tooltip.silverfish_totem");
     }
 }

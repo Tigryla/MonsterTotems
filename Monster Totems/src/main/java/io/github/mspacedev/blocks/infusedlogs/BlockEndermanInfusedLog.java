@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class BlockEndermanInfusedLog extends BlockInfusedLog {
     public BlockEndermanInfusedLog(String name, Material materialIn) {
-        super(name, materialIn);
-        tooltipText.add(I18n.format("tooltip.enderman_infused_log"));
+        super(name, materialIn,"tooltip.enderman_infused_log");
     }
 
     @SideOnly(Side.CLIENT)

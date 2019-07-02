@@ -1,6 +1,7 @@
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.entities.EntitySpiritCreeper;
+import io.github.mspacedev.entities.EntitySpiritSpider;
 import io.github.mspacedev.items.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -46,7 +47,7 @@ public class LootDropsEventHandler {
             dropSpirit(ModItems.skeleton_spirit, event);
         } else if (entity instanceof EntitySpiritCreeper) {
             dropSpirit(ModItems.creeper_spirit, event);
-        } else if (entity instanceof EntitySpider) {
+        } else if (entity instanceof EntitySpiritSpider) {
             dropSpirit(ModItems.spider_spirit, event);
         } else if (entity instanceof EntityEnderman) {
             dropSpirit(ModItems.enderman_spirit, event);

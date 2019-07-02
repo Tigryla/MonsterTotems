@@ -6,9 +6,12 @@ import io.github.mspacedev.tiles.TileEntityTotemBaseII;
 import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.*;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -24,13 +27,15 @@ import java.util.Map;
 @Mod.EventBusSubscriber
 public class TotemBaseEventHandler {
     @SubscribeEvent
-    public static void totemBase(LivingSpawnEvent.CheckSpawn event) {
+    public static void totemBase(LivingSpawnEvent.CheckSpawn event)
+    {
         findTotemBase(event, 4);
         findTotemBase(event, 8);
         findTotemBase(event, 12);
     }
 
-    private static void findTotemBase(LivingSpawnEvent.CheckSpawn event, int radius) {
+    private static void findTotemBase(LivingSpawnEvent.CheckSpawn event, int radius)
+    {
         BlockPos pos = event.getEntity().getPosition();
 
         int chunkPosX = pos.getX() >> 4;

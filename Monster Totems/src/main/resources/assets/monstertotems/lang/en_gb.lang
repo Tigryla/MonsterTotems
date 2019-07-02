@@ -124,3 +124,18 @@ tooltip.totem_base_ii=§bRadius: 128 blocks
 
 # Totem Base III
 tooltip.totem_base_iii=§bRadius: 192 blocks
+
+# Totem Base Information
+base.prevent=§6Preventing spawns of:
+base.zombies=Zombies and Husks
+base.creepers=Creepers
+base.skeletons=Skeletons, Wither Skeletons and Strays
+base.spiders=Spiders
+base.endermen=Endermen
+base.witches=Witches
+base.silverfish=Silverfish
+base.slimes=Slimes
+base.blazes=Blazes
+base.zombie_pigmen=Zombie Pigmen
+base.ghasts=Ghasts
+base.magma_cubes=Magma Cubes

@@ -27,12 +27,34 @@ public class TileEntityTotemBase extends TileEntity {
     public boolean hasZombiePigman;
     public boolean hasGhast;
     public boolean hasMagmaCube;
-    
-    public TileEntityTotemBase() {
 
+    private long cooldown;
+    private int cooldownTicks;
+
+    public TileEntityTotemBase()
+    {
+        this.cooldownTicks = 200;
     }
 
-    // Sets totem properties based on what block was placed above the totem base
+    /**
+     * Create a cooldown for how many ticks are set in the constructor.
+     * Other classes may check if this cooldown is over
+    */
+    public boolean isCooldownOver()
+    {
+        // Cooldown finished
+        if (world.getTotalWorldTime() > cooldown)
+        {
+            cooldown = world.getTotalWorldTime() + cooldownTicks;
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Sets totem properties based on what block was placed above the totem base
+     */
     public void setTotemProperties() {
         resetTotemProperties();
         Iterable<BlockPos> totemBaseRange = BlockPos.getAllInBox(pos, pos.add(0.0D, 12.0D, 0.0D));
@@ -77,6 +99,9 @@ public class TileEntityTotemBase extends TileEntity {
         }
     }
 
+    /**
+     * Sets all booleans for this tile to false
+     */
     private void resetTotemProperties() {
         hasZombie = false;
         hasSkeleton = false;
@@ -92,6 +117,9 @@ public class TileEntityTotemBase extends TileEntity {
         hasMagmaCube = false;
     }
 
+    /**
+     * Retrieves all totem head stats when the tile entity is loaded
+     */
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
@@ -110,6 +138,9 @@ public class TileEntityTotemBase extends TileEntity {
         return compound;
     }
 
+    /**
+     * Saves all totem head stats when the tile entity is unloaded
+     */
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         this.hasZombie = compound.getBoolean("hasZombie");

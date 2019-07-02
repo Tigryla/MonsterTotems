@@ -1,6 +1,7 @@
 package io.github.mspacedev.init;
 
 import io.github.mspacedev.entities.EntitySpiritCreeper;
+import io.github.mspacedev.entities.EntitySpiritSpider;
 import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.entity.Entity;
@@ -15,6 +16,7 @@ public class InitEntities
     public static void registerEntities()
     {
         registerEntity("spirit_creeper","Spirit Creeper", EntitySpiritCreeper.class, 894731, 0);
+        registerEntity("spirit_spider","Spirit Spider", EntitySpiritSpider.class, 0xff0000, 0);
 
         Utils.getLogger().info("Monster Totems Entities Registered");
     }

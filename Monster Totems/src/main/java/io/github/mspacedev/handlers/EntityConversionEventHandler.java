@@ -1,9 +1,11 @@
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.entities.EntitySpiritCreeper;
+import io.github.mspacedev.entities.EntitySpiritSpider;
 import io.github.mspacedev.items.ItemSpiritPowder;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
@@ -33,6 +35,8 @@ public class EntityConversionEventHandler
 			{
 				if (target.getClass().equals(EntityCreeper.class))
 					spawnEntity(new EntitySpiritCreeper(worldObj), target, worldObj);
+				if (target.getClass().equals(EntitySpider.class))
+					spawnEntity(new EntitySpiritSpider(worldObj), target, worldObj);
 			}
 		}
 	}

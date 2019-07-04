@@ -25,12 +25,18 @@ public class RenderEntitySpiritZombieVillager extends RenderZombieVillager
     }
 
     @Override
+    protected void applyRotations(EntityZombieVillager entityLiving, float p_77043_2_, float rotationYaw, float partialTicks)
+    {
+        super.applyRotations(entityLiving, p_77043_2_, rotationYaw, partialTicks);
+    }
+
+    @Override
     public void doRender(EntityZombieVillager entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         GlStateManager.enableAlpha();
         GlStateManager.enableBlend();
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.4F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.6F);
 
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
 

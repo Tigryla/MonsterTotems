@@ -30,7 +30,7 @@ public class RenderEntitySpiritMagmaCube extends RenderMagmaCube
         GlStateManager.pushMatrix();
         GlStateManager.enableAlpha();
         GlStateManager.enableBlend();
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.4F);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.6F);
 
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
 
@@ -38,5 +38,11 @@ public class RenderEntitySpiritMagmaCube extends RenderMagmaCube
         GlStateManager.disableAlpha();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
+    }
+
+    @Override
+    protected void applyRotations(EntityMagmaCube entityLiving, float p_77043_2_, float rotationYaw, float partialTicks)
+    {
+        super.applyRotations(entityLiving, p_77043_2_, rotationYaw, partialTicks);
     }
 }

@@ -1,6 +1,6 @@
 package io.github.mspacedev.utils;
 
-import java.util.ArrayList;
+import io.github.mspacedev.entities.*;
 
 /**
  * Copyright © MSpace-Dev 2017
@@ -15,10 +15,23 @@ public class Reference {
     public static final String COMMON_PROXY = "io.github.mspacedev.proxies.CommonProxy";
     public static final String CLIENT_PROXY = "io.github.mspacedev.proxies.ClientProxy";
 
-    public static final String[] MONSTERS = {
-            "Zombie",
-            "Skeleton",
-            "Creeper",
-            "Spider"
+    public static final Class[] ENTITIES = {
+            EntitySpiritZombie.class,
+            EntitySpiritSkeleton.class,
+            EntitySpiritCreeper.class,
+            EntitySpiritSpider.class,
+            EntitySpiritEnderman.class,
+            EntitySpiritWitch.class,
+            EntitySpiritSilverfish.class,
+            EntitySpiritSlime.class,
+            EntitySpiritBlaze.class,
+            EntitySpiritPigZombie.class,
+            EntitySpiritGhast.class,
+            EntitySpiritMagmaCube.class,
+            EntitySpiritHusk.class,
+            EntitySpiritZombieVillager.class,
+            EntitySpiritCaveSpider.class,
+            EntitySpiritStray.class,
+            EntitySpiritWitherSkeleton.class
     };
 }

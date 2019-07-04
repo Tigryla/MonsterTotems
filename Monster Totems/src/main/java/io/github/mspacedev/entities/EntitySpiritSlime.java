@@ -14,4 +14,10 @@ public class EntitySpiritSlime extends EntitySlime
         super(worldIn);
         this.setSlimeSize(size, true);
     }
+
+    @Override
+    protected EntitySlime createInstance()
+    {
+        return new EntitySpiritSlime(this.world);
+    }
 }

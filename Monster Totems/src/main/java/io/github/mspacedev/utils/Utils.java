@@ -1,5 +1,6 @@
 package io.github.mspacedev.utils;
 
+import net.minecraft.client.renderer.GlStateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,5 +19,19 @@ public class Utils {
             logger = LogManager.getFormatterLogger(Reference.MODID);
         }
         return logger;
+    }
+
+    public static void PushMatrix()
+    {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableAlpha();
+        GlStateManager.enableBlend();
+    }
+
+    public static void PopMatrix()
+    {
+        GlStateManager.disableAlpha();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
     }
 }

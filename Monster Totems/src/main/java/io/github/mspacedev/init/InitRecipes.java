@@ -21,12 +21,23 @@ public class InitRecipes
 
     private static void registerRecipes() {
         // Carving Tool
-//        GameRegistry.addShapedRecipe(new ItemStack(ModItems.carving_tool, 1), new Object[] {"I  ", " I ", "  S", 'S', Items.STICK, 'I', ModItems.spirit_ingot} );
-//        GameRegistry.addShapedRecipe(new ItemStack(ModItems.carving_tool, 1), new Object[] {"  I", " I ", "S  ", 'S', Items.STICK, 'I', ModItems.spirit_ingot} );
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.carving_tool, 1),
+                "I  ", " I ", "  S", 'S', Items.STICK, 'I', ModItems.spirit_ingot
+        );
+
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.carving_tool, 1),
+                "  I", " I ", "S  ", 'S', Items.STICK, 'I', ModItems.spirit_ingot
+        );
+
+        // Spirit Powder
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.spirit_powder, 1),
+                "GEG", "DSD", "GEG", 'G', Items.GOLD_INGOT, 'E', Items.EMERALD, 'S', Items.GLOWSTONE_DUST, 'D', Items.DIAMOND
+        );
+
         // Spirit Knife
     }
 
     private static void registerSmelting() {
-//        GameRegistry.addSmelting(ModItems.spirit_powder, new ItemStack(ModItems.spirit_ingot, 1), 0.0f);
+        GameRegistry.addSmelting(ModItems.spirit_powder, new ItemStack(ModItems.spirit_ingot, 1), 0.0f);
     }
 }

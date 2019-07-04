@@ -8,6 +8,4 @@ public class EntitySpiritCreeper extends EntityCreeper
     public EntitySpiritCreeper(World worldIn) {
         super(worldIn);
     }
-
-
 }

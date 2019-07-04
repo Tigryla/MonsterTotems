@@ -3,29 +3,29 @@ package io.github.mspacedev.entities.render;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RenderCreeper;
+import net.minecraft.client.renderer.entity.RenderZombieVillager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEntitySpiritCreeper extends RenderCreeper
+public class RenderEntitySpiritZombieVillager extends RenderZombieVillager
 {
-    private static final ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/entity/spirit_creeper.png");
+    private static final ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/entity/zombie/spirit_zombie_villager.png");
 
-    public RenderEntitySpiritCreeper(RenderManager renderManagerIn)
+    public RenderEntitySpiritZombieVillager(RenderManager renderManagerIn)
     {
         super(renderManagerIn);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityCreeper entity)
+    protected ResourceLocation getEntityTexture(EntityZombieVillager entity)
     {
         return texture;
     }
 
     @Override
-    public void doRender(EntityCreeper entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public void doRender(EntityZombieVillager entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         GlStateManager.enableAlpha();

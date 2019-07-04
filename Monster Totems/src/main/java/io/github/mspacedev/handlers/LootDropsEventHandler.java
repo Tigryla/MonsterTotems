@@ -1,7 +1,6 @@
 package io.github.mspacedev.handlers;
 
-import io.github.mspacedev.entities.EntitySpiritCreeper;
-import io.github.mspacedev.entities.EntitySpiritSpider;
+import io.github.mspacedev.entities.*;
 import io.github.mspacedev.items.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -39,29 +38,29 @@ public class LootDropsEventHandler {
     private void checkMob(LivingDropsEvent event) {
         Entity entity = event.getEntity();
 
-        if (entity instanceof EntityPigZombie) {
+        if (entity instanceof EntitySpiritPigZombie) {
             dropSpirit(ModItems.zombie_pigman_spirit, event);
-        } else if(entity instanceof EntityZombie) {
+        } else if(entity instanceof EntitySpiritZombie || entity instanceof EntitySpiritHusk || entity instanceof EntitySpiritZombieVillager) {
             dropSpirit(ModItems.zombie_spirit, event);
-        } else if (entity instanceof AbstractSkeleton) {
+        } else if (entity instanceof EntitySpiritSkeleton || entity instanceof EntitySpiritStray || entity instanceof EntitySpiritWitherSkeleton) {
             dropSpirit(ModItems.skeleton_spirit, event);
         } else if (entity instanceof EntitySpiritCreeper) {
             dropSpirit(ModItems.creeper_spirit, event);
-        } else if (entity instanceof EntitySpiritSpider) {
+        } else if (entity instanceof EntitySpiritSpider || entity instanceof EntitySpiritCaveSpider) {
             dropSpirit(ModItems.spider_spirit, event);
-        } else if (entity instanceof EntityEnderman) {
+        } else if (entity instanceof EntitySpiritEnderman) {
             dropSpirit(ModItems.enderman_spirit, event);
-        } else if (entity instanceof EntityWitch) {
+        } else if (entity instanceof EntitySpiritWitch) {
             dropSpirit(ModItems.witch_spirit, event);
-        } else if (entity instanceof EntitySilverfish) {
+        } else if (entity instanceof EntitySpiritSilverfish) {
             dropSpirit(ModItems.silverfish_spirit, event);
-        } else if (entity instanceof EntityMagmaCube) {
+        } else if (entity instanceof EntitySpiritMagmaCube) {
             dropSpirit(ModItems.magma_cube_spirit, event);
-        } else if (entity instanceof EntitySlime) {
+        } else if (entity instanceof EntitySpiritSlime) {
             dropSpirit(ModItems.slime_spirit, event);
-        } else if (entity instanceof EntityBlaze) {
+        } else if (entity instanceof EntitySpiritBlaze) {
             dropSpirit(ModItems.blaze_spirit, event);
-        } else if (entity instanceof EntityGhast) {
+        } else if (entity instanceof EntitySpiritGhast) {
             dropSpirit(ModItems.ghast_spirit, event);
         }
     }

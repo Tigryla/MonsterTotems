@@ -3,29 +3,29 @@ package io.github.mspacedev.entities.render;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RenderCreeper;
+import net.minecraft.client.renderer.entity.RenderWitch;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEntitySpiritCreeper extends RenderCreeper
+public class RenderEntitySpiritWitch extends RenderWitch
 {
-    private static final ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/entity/spirit_creeper.png");
+    private static final ResourceLocation texture = new ResourceLocation(Reference.MODID, "textures/entity/spirit_witch.png");
 
-    public RenderEntitySpiritCreeper(RenderManager renderManagerIn)
+    public RenderEntitySpiritWitch(RenderManager renderManagerIn)
     {
         super(renderManagerIn);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityCreeper entity)
+    protected ResourceLocation getEntityTexture(EntityWitch entity)
     {
         return texture;
     }
 
     @Override
-    public void doRender(EntityCreeper entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public void doRender(EntityWitch entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
         GlStateManager.pushMatrix();
         GlStateManager.enableAlpha();

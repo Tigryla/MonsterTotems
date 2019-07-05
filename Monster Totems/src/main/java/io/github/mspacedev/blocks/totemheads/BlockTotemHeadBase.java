@@ -13,6 +13,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 /**
@@ -33,18 +34,8 @@ public class BlockTotemHeadBase extends BlockWoodBase {
     // Looks for totem bases below and sets totem properties based on what totem head it is.
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        Iterable<BlockPos> totemBaseRange = BlockPos.getAllInBox(pos, pos.add(0.0D, -12.0D, 0.0D));
-
         if(!worldIn.isRemote) {
-            for (BlockPos posRange : totemBaseRange) {
-                if (worldIn.getTileEntity(posRange) != null) {
-                    if (worldIn.getTileEntity(posRange) instanceof TileEntityTotemBase) {
-                        TileEntityTotemBase totem_base = (TileEntityTotemBase) worldIn.getTileEntity(posRange);
-                        totem_base.setTotemProperties();
-                        break;
-                    }
-                }
-            }
+            updateTotemBase(worldIn, pos);
         }
 
         super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
@@ -52,21 +43,32 @@ public class BlockTotemHeadBase extends BlockWoodBase {
 
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-        Iterable<BlockPos> totemBaseRange = BlockPos.getAllInBox(pos, pos.add(0.0D, -12.0D, 0.0D));
-
         if(!worldIn.isRemote) {
-            for (BlockPos posRange : totemBaseRange) {
-                if (worldIn.getTileEntity(posRange) != null) {
-                    if (worldIn.getTileEntity(posRange) instanceof TileEntityTotemBase) {
-                        TileEntityTotemBase totem_base = (TileEntityTotemBase) worldIn.getTileEntity(posRange);
-                        totem_base.setTotemProperties();
-                        break;
-                    }
-                }
-            }
+            updateTotemBase(worldIn, pos);
         }
 
         super.breakBlock(worldIn, pos, state);
+    }
+
+    public void updateTotemBase(World worldIn, BlockPos pos) {
+        Iterable<BlockPos> totemBaseRange = BlockPos.getAllInBox(pos, pos.add(0.0D, -12.0D, 0.0D));
+
+        for (BlockPos posRange : totemBaseRange) {
+            if (worldIn.getTileEntity(posRange) != null) {
+                if (worldIn.getTileEntity(posRange) instanceof TileEntityTotemBase) {
+                    TileEntityTotemBase totem_base = (TileEntityTotemBase) worldIn.getTileEntity(posRange);
+                    totem_base.setTotemProperties();
+                    totem_base.resetCooldown();
+                    break;
+                }
+            }
+        }
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
     }
 
 

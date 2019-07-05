@@ -53,6 +53,29 @@ public class TileEntityTotemBase extends TileEntity {
     }
 
     /**
+     * Resets the cooldown of this totem base.
+     */
+    public void resetCooldown()
+    {
+        cooldown = world.getTotalWorldTime();
+    }
+
+    /**
+     * @return false if there are no totem heads active on top of this totem base
+     */
+    public boolean hasActiveTotemHeads()
+    {
+        if (
+                hasZombie || hasSkeleton || hasCreeper || hasSpider ||
+                        hasEnderman || hasWitch || hasSilverfish || hasSlime ||
+                        hasBlaze || hasGhast || hasZombiePigman || hasMagmaCube
+        )
+            return true;
+        else
+            return false;
+    }
+
+    /**
      * Sets totem properties based on what block was placed above the totem base
      */
     public void setTotemProperties() {

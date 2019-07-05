@@ -1,6 +1,7 @@
 package io.github.mspacedev.tiles;
 
 import io.github.mspacedev.blocks.ModBlocks;
+import io.github.mspacedev.blocks.totemheads.BlockTotemHeadBase;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
@@ -50,6 +51,15 @@ public class TileEntityInfusedLog extends TileEntity {
             getWorld().setBlockState(pos, ModBlocks.ghast_totem.getDefaultState());
         } else if (infusedLog == ModBlocks.magma_cube_infused_log) {
             getWorld().setBlockState(pos, ModBlocks.magma_cube_totem.getDefaultState());
+        }
+
+        if(!world.isRemote)
+        {
+            if (world.getBlockState(pos).getBlock() instanceof BlockTotemHeadBase)
+            {
+                BlockTotemHeadBase block = (BlockTotemHeadBase) world.getBlockState(pos).getBlock();
+                block.updateTotemBase(world, pos);
+            }
         }
     }
 }

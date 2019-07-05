@@ -126,6 +126,7 @@ tooltip.totem_base_ii=§bRadius: 128 blocks
 tooltip.totem_base_iii=§bRadius: 192 blocks
 
 # Totem Base Information
+base.no_active_heads=§cThere are no totem heads above the base.
 base.prevent=§6Preventing spawns of:
 base.zombies=Zombies and Husks
 base.creepers=Creepers

@@ -14,7 +14,6 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber
@@ -42,11 +41,11 @@ public class EntityConversionEventHandler
 		World worldObj = event.getWorld();
 		EntityPlayer player = event.getEntityPlayer();
 
-		if(player.getHeldItem(event.getHand()).getItem() instanceof ItemSpiritPowder)
+		if (player.getHeldItem(event.getHand()).getItem() instanceof ItemSpiritPowder)
 		{
 			boolean playsound = true;
 
-			if(worldObj.isRemote)
+			if (worldObj.isRemote)
 			{
 				for (Class spiritEntityClass : Reference.ENTITIES)
 				{
@@ -58,7 +57,7 @@ public class EntityConversionEventHandler
 			if (playsound)
 				worldObj.playSound(target.posX, target.posY, target.posZ, SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.AMBIENT, 0.25F, 2.0F, false);
 
-			if(!worldObj.isRemote)
+			if (!worldObj.isRemote)
 			{
 				if (target.getClass().equals(EntityZombie.class))
 					spawnEntity(new EntitySpiritZombie(worldObj), event);
@@ -94,8 +93,7 @@ public class EntityConversionEventHandler
 				{
 					EntityMagmaCube slime = (EntityMagmaCube) target;
 					spawnEntity(new EntitySpiritMagmaCube(worldObj, slime.getSlimeSize()), event);
-				}
-				else if (target.getClass().equals(EntitySlime.class))
+				} else if (target.getClass().equals(EntitySlime.class))
 				{
 					EntitySlime slime = (EntitySlime) target;
 					spawnEntity(new EntitySpiritSlime(worldObj, slime.getSlimeSize()), event);
@@ -111,7 +109,7 @@ public class EntityConversionEventHandler
 
 		entity.setPositionAndRotation(target.posX, target.posY, target.posZ, target.rotationYaw, target.rotationPitch);
 		world.spawnEntity(entity);
-		((WorldServer)world).spawnParticle(EnumParticleTypes.CLOUD, target.posX, target.posY, target.posZ, 100, 0.5F, 1.0F, 0.5F, 0);
+		((WorldServer) world).spawnParticle(EnumParticleTypes.CLOUD, target.posX, target.posY, target.posZ, 100, 0.5F, 1.0F, 0.5F, 0);
 		target.setDead();
 
 		// Removes powder from player

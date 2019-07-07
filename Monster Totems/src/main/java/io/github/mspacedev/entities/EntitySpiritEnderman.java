@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritEnderman extends EntityEnderman
 {
-    public EntitySpiritEnderman(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritEnderman(World worldIn)
+	{
+		super(worldIn);
+	}
 }

@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritSkeleton extends EntitySkeleton
 {
-    public EntitySpiritSkeleton(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritSkeleton(World worldIn)
+	{
+		super(worldIn);
+	}
 }

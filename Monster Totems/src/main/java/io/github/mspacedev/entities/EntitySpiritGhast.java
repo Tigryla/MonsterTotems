@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritGhast extends EntityGhast
 {
-    public EntitySpiritGhast(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritGhast(World worldIn)
+	{
+		super(worldIn);
+	}
 }

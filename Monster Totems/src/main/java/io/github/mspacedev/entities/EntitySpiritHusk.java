@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritHusk extends EntityHusk
 {
-    public EntitySpiritHusk(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritHusk(World worldIn)
+	{
+		super(worldIn);
+	}
 }

@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritZombie extends EntityZombie
 {
-    public EntitySpiritZombie(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritZombie(World worldIn)
+	{
+		super(worldIn);
+	}
 }

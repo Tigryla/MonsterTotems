@@ -1,8 +1,8 @@
 package io.github.mspacedev.handlers;
 
-import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.items.ModItems;
+import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -17,78 +17,77 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * Copyright © MSpace-Dev 2017
+ * Copyright © MSpaceDev 2019
  * Do not distribute without proper permission from the author.
  * https://mspace-dev.github.io
  */
 
 @Mod.EventBusSubscriber
-public class RegistryEventHandler {
-    public static TextureAtlasSprite textureAtlasSprite;
+public class RegistryEventHandler
+{
+	private static final ResourceLocation convertLogRL = new ResourceLocation(Reference.MODID, "blocks.convert_log");
+	public static TextureAtlasSprite textureAtlasSprite;
+	public static SoundEvent convert_log;
 
-    public static SoundEvent convert_log;
-    private static final ResourceLocation convertLogRL = new ResourceLocation(Reference.MODID, "blocks.convert_log");
-
-    @SubscribeEvent
-    public static void registerSounds(RegistryEvent.Register<SoundEvent> event)
+	@SubscribeEvent
+	public static void registerSounds(RegistryEvent.Register<SoundEvent> event)
 	{
-        convert_log = new SoundEvent(convertLogRL).setRegistryName(convertLogRL);
-        registerSound(convert_log, event);
-    }
+		convert_log = new SoundEvent(convertLogRL).setRegistryName(convertLogRL);
+		registerSound(convert_log, event);
+	}
 
-    @SubscribeEvent
-    @SideOnly(Side.CLIENT)
-    public static void registerParticleMap(TextureStitchEvent.Pre event)
+	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
+	public static void registerParticleMap(TextureStitchEvent.Pre event)
 	{
-        TextureMap map = event.getMap();
-        textureAtlasSprite = map.registerSprite(new ResourceLocation(Reference.MODID, "particle/particles"));
-    }
+		TextureMap map = event.getMap();
+		textureAtlasSprite = map.registerSprite(new ResourceLocation(Reference.MODID, "particle/particles"));
+	}
 
-    private static void registerSound(SoundEvent soundID, RegistryEvent.Register<SoundEvent> event)
+	private static void registerSound(SoundEvent soundID, RegistryEvent.Register<SoundEvent> event)
 	{
-        Utils.getLogger().info(soundID + " loaded");
-        event.getRegistry().register(soundID);
-    }
+		Utils.getLogger().info(soundID + " loaded");
+		event.getRegistry().register(soundID);
+	}
 
-    @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event)
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event)
 	{
-        event.getRegistry().registerAll(ModBlocks.BLOCKS);
-        Utils.getLogger().info("Monster Totems Blocks Registered");
-    }
+		event.getRegistry().registerAll(ModBlocks.BLOCKS);
+		Utils.getLogger().info("Monster Totems Blocks Registered");
+	}
 
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event)
+	@SubscribeEvent
+	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
-        event.getRegistry().registerAll(ModItems.ITEMS);
+		event.getRegistry().registerAll(ModItems.ITEMS);
 
-        for(Block block : ModBlocks.BLOCKS)
-        {
-            event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
-        }
+		for (Block block : ModBlocks.BLOCKS)
+		{
+			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+		}
 
-        Utils.getLogger().info("Monster Totems Items Registered");
-    }
+		Utils.getLogger().info("Monster Totems Items Registered");
+	}
 
-    @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event)
+	@SubscribeEvent
+	public static void registerModels(ModelRegistryEvent event)
 	{
-        for(Block block : ModBlocks.BLOCKS)
-        {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-        }
+		for (Block block : ModBlocks.BLOCKS)
+		{
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+		}
 
-        for(Item item : ModItems.ITEMS)
-        {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-        }
+		for (Item item : ModItems.ITEMS)
+		{
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		}
 
-        Utils.getLogger().info("Monster Totems Models Registered");
-    }
+		Utils.getLogger().info("Monster Totems Models Registered");
+	}
 }

@@ -9,42 +9,41 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Copyright © MSpace-Dev 2017
+ * Copyright © MSpaceDev 2019
  * Do not distribute without proper permission from the author.
  * https://mspace-dev.github.io
  */
 
-public class ItemBase extends Item {
-    private String tooltipText;
+public class ItemBase extends Item
+{
+	private String tooltipText;
 
-    public ItemBase(String name) {
-        this.setUnlocalizedName(name);
-        this.setRegistryName(new ResourceLocation(Reference.MODID, name));
-        this.setCreativeTab(MonsterTotems.creativeTab);
-    }
+	public ItemBase(String name, String tooltip)
+	{
+		this.setUnlocalizedName(name);
+		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
+		this.setCreativeTab(MonsterTotems.creativeTab);
+		this.tooltipText = tooltip;
+	}
 
-    public ItemBase(String name, String tooltip) {
-        this.setUnlocalizedName(name);
-        this.setRegistryName(new ResourceLocation(Reference.MODID, name));
-        this.setCreativeTab(MonsterTotems.creativeTab);
-        this.tooltipText = tooltip;
-    }
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced)
+	{
+		if (tooltipText == null)
+		{
+			tooltip.add(I18n.format("tooltip.missing"));
+		}
 
-    @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
-        if (tooltipText == null) {
-            tooltip.add(I18n.format("tooltip.missing"));
-        }
-
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
-            tooltip.add(I18n.format(tooltipText));
-        } else {
-            tooltip.add(I18n.format("tooltip.shift"));
-        }
-        super.addInformation(stack, player, tooltip, advanced);
-    }
+		if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))
+		{
+			tooltip.add(I18n.format(tooltipText));
+		} else
+		{
+			tooltip.add(I18n.format("tooltip.shift"));
+		}
+		super.addInformation(stack, player, tooltip, advanced);
+	}
 }

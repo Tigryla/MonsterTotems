@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritSpider extends EntitySpider
 {
-    public EntitySpiritSpider(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritSpider(World worldIn)
+	{
+		super(worldIn);
+	}
 }

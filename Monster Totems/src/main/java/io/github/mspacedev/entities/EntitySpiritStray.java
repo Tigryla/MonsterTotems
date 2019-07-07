@@ -5,8 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritStray extends EntityStray
 {
-    public EntitySpiritStray(World worldIn)
-    {
-        super(worldIn);
-    }
+	public EntitySpiritStray(World worldIn)
+	{
+		super(worldIn);
+	}
 }

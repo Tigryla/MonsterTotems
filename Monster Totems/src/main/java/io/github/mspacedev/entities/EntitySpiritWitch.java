@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritWitch extends EntityWitch
 {
-    public EntitySpiritWitch(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritWitch(World worldIn)
+	{
+		super(worldIn);
+	}
 }

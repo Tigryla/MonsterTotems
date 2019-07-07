@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritSilverfish extends EntitySilverfish
 {
-    public EntitySpiritSilverfish(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritSilverfish(World worldIn)
+	{
+		super(worldIn);
+	}
 }

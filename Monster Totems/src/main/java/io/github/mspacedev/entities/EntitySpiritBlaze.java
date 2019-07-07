@@ -5,7 +5,8 @@ import net.minecraft.world.World;
 
 public class EntitySpiritBlaze extends EntityBlaze
 {
-    public EntitySpiritBlaze(World worldIn) {
-        super(worldIn);
-    }
+	public EntitySpiritBlaze(World worldIn)
+	{
+		super(worldIn);
+	}
 }

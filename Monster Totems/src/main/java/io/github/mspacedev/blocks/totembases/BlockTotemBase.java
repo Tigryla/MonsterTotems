@@ -131,30 +131,35 @@ public class BlockTotemBase extends BlockWoodBase
 					if (tile.hasActiveTotemHeads())
 					{
 						component.appendText(I18n.format("base.prevent"));
-						if (tile.hasZombie)
-							component.appendText("\n" + I18n.format("base.zombies"));
-						if (tile.hasCreeper)
-							component.appendText("\n" + I18n.format("base.creepers"));
-						if (tile.hasSkeleton)
-							component.appendText("\n" + I18n.format("base.skeletons"));
-						if (tile.hasSpider)
-							component.appendText("\n" + I18n.format("base.spiders"));
-						if (tile.hasEnderman)
-							component.appendText("\n" + I18n.format("base.endermen"));
-						if (tile.hasWitch)
-							component.appendText("\n" + I18n.format("base.witches"));
-						if (tile.hasSilverfish)
-							component.appendText("\n" + I18n.format("base.silverfish"));
-						if (tile.hasSlime)
-							component.appendText("\n" + I18n.format("base.slimes"));
-						if (tile.hasBlaze)
-							component.appendText("\n" + I18n.format("base.blazes"));
-						if (tile.hasZombiePigman)
-							component.appendText("\n" + I18n.format("base.zombie_pigmen"));
-						if (tile.hasGhast)
-							component.appendText("\n" + I18n.format("base.ghasts"));
-						if (tile.hasMagmaCube)
-							component.appendText("\n" + I18n.format("base.magma_cubes"));
+						if (tile.isMaster)
+							component.appendText("\n" + I18n.format("base.master"));
+						else
+						{
+							if (tile.hasZombie)
+								component.appendText("\n" + I18n.format("base.zombies"));
+							if (tile.hasCreeper)
+								component.appendText("\n" + I18n.format("base.creepers"));
+							if (tile.hasSkeleton)
+								component.appendText("\n" + I18n.format("base.skeletons"));
+							if (tile.hasSpider)
+								component.appendText("\n" + I18n.format("base.spiders"));
+							if (tile.hasEnderman)
+								component.appendText("\n" + I18n.format("base.endermen"));
+							if (tile.hasWitch)
+								component.appendText("\n" + I18n.format("base.witches"));
+							if (tile.hasSilverfish)
+								component.appendText("\n" + I18n.format("base.silverfish"));
+							if (tile.hasSlime)
+								component.appendText("\n" + I18n.format("base.slimes"));
+							if (tile.hasBlaze)
+								component.appendText("\n" + I18n.format("base.blazes"));
+							if (tile.hasZombiePigman)
+								component.appendText("\n" + I18n.format("base.zombie_pigmen"));
+							if (tile.hasGhast)
+								component.appendText("\n" + I18n.format("base.ghasts"));
+							if (tile.hasMagmaCube)
+								component.appendText("\n" + I18n.format("base.magma_cubes"));
+						}
 					} else
 					{
 						component.appendText(I18n.format("base.no_active_heads"));

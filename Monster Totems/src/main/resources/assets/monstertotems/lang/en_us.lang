@@ -1,4 +1,4 @@
-# English GB
+# English US
 
 ## Creative Tab ##
 itemGroup.monstertotems=Monster Totems
@@ -39,6 +39,10 @@ tile.blaze_totem.name=Blaze Totem Head
 tile.ghast_totem.name=Ghast Totem Head
 tile.zombie_pigman_totem.name=Zombie Pigman Totem Head
 tile.magma_cube_totem.name=Magma Cube Totem Head
+tile.overworld_totem.name=Overworld Totem Head
+tile.nether_totem.name=Nether Totem Head
+tile.unnatural_totem.name=Unnatural Totem Head
+tile.master_totem.name=Master Totem Head
 
 # Functional Totems
 
@@ -111,7 +115,10 @@ tooltip.slime_totem=Stops Slimes from spawning when placed on a totem base
 tooltip.blaze_totem=Stops Blazes from spawning when placed on a totem base
 tooltip.zombie_pigman_totem=Stops Zombie Pigmen from spawning when placed on a totem base
 tooltip.ghast_totem=Stops Ghasts from spawning when placed on a totem base
-tooltip.magma_cube_totem=Stops Magma Cubes from spawning when placed on a totem base
+tooltip.overworld_totem=Combines the effects of the Zombie, Skeleton, Creeper and Spider Totem Heads
+tooltip.nether_totem=Combines the effects of the Blaze, Ghast, Zombie Pigman and Magma Cube Totem Heads
+tooltip.unnatural_totem=Combines the effects of the Enderman, Witch, Silverfish and Slime Totem Heads
+tooltip.master_totem=Stops all monsters from spawning §o(Even modded ones)
 
 # Totem Bases
 tooltip.totem_base=Required for totem heads to work and determines affected radius
@@ -120,10 +127,10 @@ tooltip.totem_base=Required for totem heads to work and determines affected radi
 tooltip.totem_base_i=§bRadius: 64 blocks
 
 # Totem Base II
-tooltip.totem_base_ii=§bRadius: 128 blocks
+tooltip.totem_base_ii=§bRadius: 96 blocks
 
 # Totem Base III
-tooltip.totem_base_iii=§bRadius: 192 blocks
+tooltip.totem_base_iii=§bRadius: 128 blocks
 
 # Totem Base Information
 base.no_active_heads=§cThere are no totem heads above the base.
@@ -140,3 +147,4 @@ base.blazes=Blazes
 base.zombie_pigmen=Zombie Pigmen
 base.ghasts=Ghasts
 base.magma_cubes=Magma Cubes
+base.master=All monsters

@@ -44,6 +44,11 @@ public class ModBlocks
 	public static final Block ghast_totem = new BlockGhastTotem("ghast_totem", Material.WOOD);
 	public static final Block magma_cube_totem = new BlockMagmaCubeTotem("magma_cube_totem", Material.WOOD);
 
+	public static final Block overworld_totem = new BlockOverworldTotem("overworld_totem", Material.WOOD);
+	public static final Block nether_totem = new BlockNetherTotem("nether_totem", Material.WOOD);
+	public static final Block unnatural_totem = new BlockUnnaturalTotem("unnatural_totem", Material.WOOD);
+	public static final Block master_totem = new BlockMasterTotem("master_totem", Material.WOOD);
+
 	// Totem Bases
 	public static final Block totem_base_i = new BlockTotemBaseI("totem_base_i", Material.WOOD);
 	public static final Block totem_base_ii = new BlockTotemBaseII("totem_base_ii", Material.WOOD);
@@ -65,6 +70,10 @@ public class ModBlocks
 			zombie_pigman_infused_log,
 			ghast_infused_log,
 			magma_cube_infused_log,
+			overworld_totem,
+			nether_totem,
+			unnatural_totem,
+			master_totem,
 			// Totem Heads
 			zombie_totem,
 			skeleton_totem,

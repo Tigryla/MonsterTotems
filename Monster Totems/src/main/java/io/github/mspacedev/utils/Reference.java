@@ -60,4 +60,6 @@ public class Reference
 			new AxisAlignedBB(1.0625D, 1.125D, -0.15625D, 1.15625D, 1.3125D, -0.0625D),
 			new AxisAlignedBB(1.0625D, 1.28125D, -0.09375D, 1.15625D, 1.4375D, 0.0D)
 	};
+
+	public static final AxisAlignedBB MASTER_TOTEM_BOUNDING_BOX = new AxisAlignedBB(0.0D, -1.0D, 0.0D, 1.0D, 2.0D, 1.0D);
 }

@@ -12,7 +12,7 @@ public class InitEntities
 
 	private static int id = 1500;
 
-	public static void registerEntities()
+	public static void register()
 	{
 		registerEntity("spirit_blaze", "Spirit Blaze", EntitySpiritBlaze.class, 16167425, 16775294);
 		registerEntity("spirit_cave_spider", "Spirit Cave Spider", EntitySpiritCaveSpider.class, 803406, 11013646);

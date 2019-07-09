@@ -16,6 +16,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class DrawBlockHighlightEventHandler
 {
+	private static final AxisAlignedBB MASTER_BOTTOM = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 3.0D, 1.0D);
+	private static final AxisAlignedBB MASTER_MIDDLE = new AxisAlignedBB(0.0D, -1.0D, 0.0D, 1.0D, 2.0D, 1.0D);
+	private static final AxisAlignedBB MASTER_TOP = new AxisAlignedBB(0.0D, 1.0D, 0.0D, 1.0D, -2.0D, 1.0D);
+
 	@SubscribeEvent
 	public static void onDrawBlockHighlight(DrawBlockHighlightEvent event)
 	{
@@ -27,28 +31,31 @@ public class DrawBlockHighlightEventHandler
 			if (world.getTileEntity(pos) instanceof TileEntityTotemBase)
 			{
 				event.setCanceled(true);
-				TileEntityTotemBase tile = (TileEntityTotemBase) world.getTileEntity(pos);
 
 				for (AxisAlignedBB axisAlignedBB : Reference.TOTEM_BASE_BOUNDING_BOXES)
 				{
-					drawSelectionBox(event.getPlayer(), axisAlignedBB, (double) event.getPartialTicks(), event.getTarget(), tile);
+					drawSelectionBox(event, axisAlignedBB);
 				}
 			}
 		}
 	}
 
-	private static void drawSelectionBox(EntityPlayer player, AxisAlignedBB axisAlignedBB, double partialTicks, RayTraceResult movingObjectPositionIn, TileEntityTotemBase tile)
+	private static void drawSelectionBox(DrawBlockHighlightEvent event, AxisAlignedBB axisAlignedBB)
 	{
+		RayTraceResult movingObjectPositionIn = event.getTarget();
+		double partialTicks = (double) event.getPartialTicks();
+		EntityPlayer player = event.getPlayer();
+
 		GlStateManager.enableBlend();
 		GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-		GlStateManager.glLineWidth(1.0F);
+		GlStateManager.glLineWidth(2.0F);
 		GlStateManager.disableTexture2D();
 		GlStateManager.depthMask(false);
 
 		double d0 = player.lastTickPosX + (player.posX - player.lastTickPosX) * partialTicks;
 		double d1 = player.lastTickPosY + (player.posY - player.lastTickPosY) * partialTicks;
 		double d2 = player.lastTickPosZ + (player.posZ - player.lastTickPosZ) * partialTicks;
-		RenderGlobal.drawSelectionBoundingBox(axisAlignedBB.offset(-d0, -d1, -d2).offset(movingObjectPositionIn.getBlockPos()), tile.hasActiveTotemHeads() ? 0.0F : 1.0F, tile.hasActiveTotemHeads() ? 1.0F : 0.0F, 0.0F, 0.4F);
+		RenderGlobal.drawSelectionBoundingBox(axisAlignedBB.offset(-d0, -d1, -d2).offset(movingObjectPositionIn.getBlockPos()), 0.0F, 0.0F, 0.0F, 0.4F);
 
 		GlStateManager.depthMask(true);
 		GlStateManager.enableTexture2D();

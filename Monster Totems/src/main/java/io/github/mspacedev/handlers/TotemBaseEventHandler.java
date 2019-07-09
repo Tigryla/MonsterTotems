@@ -5,6 +5,7 @@ import io.github.mspacedev.tiles.TileEntityTotemBaseI;
 import io.github.mspacedev.tiles.TileEntityTotemBaseII;
 import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.*;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -25,11 +26,11 @@ import java.util.Map;
 public class TotemBaseEventHandler
 {
 	@SubscribeEvent
-	public static void totemBase(LivingSpawnEvent.CheckSpawn event)
+	public static void onLivingEntitySpawn(LivingSpawnEvent.CheckSpawn event)
 	{
 		findTotemBase(event, 4);
+		findTotemBase(event, 6);
 		findTotemBase(event, 8);
-		findTotemBase(event, 12);
 	}
 
 	private static void findTotemBase(LivingSpawnEvent.CheckSpawn event, int radius)
@@ -51,15 +52,11 @@ public class TotemBaseEventHandler
 						if (te != null)
 						{
 							if (te instanceof TileEntityTotemBaseI && radius == 4)
-							{
 								denySpawning(event, (TileEntityTotemBaseI) te);
-							} else if (te instanceof TileEntityTotemBaseII && radius == 8)
-							{
+							else if (te instanceof TileEntityTotemBaseII && radius == 6)
 								denySpawning(event, (TileEntityTotemBaseII) te);
-							} else if (te instanceof TileEntityTotemBaseIII && radius == 12)
-							{
+							else if (te instanceof TileEntityTotemBaseIII && radius == 8)
 								denySpawning(event, (TileEntityTotemBaseIII) te);
-							}
 						}
 					}
 				}
@@ -71,48 +68,31 @@ public class TotemBaseEventHandler
 	{
 		Entity entity = event.getEntity();
 
-		if (entity instanceof EntityZombie && totemBase.hasZombie)
-		{
-			if (!(entity instanceof EntityPigZombie))
-			{
-				event.setResult(Event.Result.DENY);
-			}
-		} else if (entity instanceof AbstractSkeleton && totemBase.hasSkeleton)
-		{
+		if ((entity instanceof EntityZombie && totemBase.hasZombie) && !entity.getClass().equals(EntityPigZombie.class))
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityCreeper && totemBase.hasCreeper)
-		{
+		else if (entity instanceof AbstractSkeleton && totemBase.hasSkeleton)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntitySpider && totemBase.hasSpider)
-		{
+		else if (entity instanceof EntityCreeper && totemBase.hasCreeper)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityEnderman && totemBase.hasEnderman)
-		{
+		else if (entity instanceof EntitySpider && totemBase.hasSpider)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityWitch && totemBase.hasWitch)
-		{
+		else if (entity instanceof EntityEnderman && totemBase.hasEnderman)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntitySilverfish && totemBase.hasSilverfish)
-		{
+		else if (entity instanceof EntityWitch && totemBase.hasWitch)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityMagmaCube && totemBase.hasMagmaCube)
-		{
+		else if (entity instanceof EntitySilverfish && totemBase.hasSilverfish)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntitySlime && totemBase.hasSlime)
-		{
-			if (!(entity instanceof EntityMagmaCube))
-			{
-				event.setResult(Event.Result.DENY);
-			}
-		} else if (entity instanceof EntityBlaze && totemBase.hasBlaze)
-		{
+		else if (entity.getClass().equals(EntityMagmaCube.class) && totemBase.hasMagmaCube)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityGhast && totemBase.hasGhast)
-		{
+		else if (entity.getClass().equals(EntitySlime.class) && totemBase.hasSlime)
 			event.setResult(Event.Result.DENY);
-		} else if (entity instanceof EntityPigZombie && totemBase.hasZombiePigman)
-		{
+		else if (entity instanceof EntityBlaze && totemBase.hasBlaze)
 			event.setResult(Event.Result.DENY);
-		}
+		else if (entity instanceof EntityGhast && totemBase.hasGhast)
+			event.setResult(Event.Result.DENY);
+		else if (entity instanceof EntityPigZombie && totemBase.hasZombiePigman)
+			event.setResult(Event.Result.DENY);
+		else if (entity.isCreatureType(EnumCreatureType.MONSTER, false) && totemBase.isMaster)
+			event.setResult(Event.Result.DENY);
 	}
 }

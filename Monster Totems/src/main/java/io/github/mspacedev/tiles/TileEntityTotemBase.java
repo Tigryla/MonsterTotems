@@ -1,16 +1,11 @@
 package io.github.mspacedev.tiles;
 
 import io.github.mspacedev.blocks.ModBlocks;
+import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
-
-import javax.annotation.Nullable;
 
 /**
  * Copyright © MSpaceDev 2019
@@ -18,7 +13,7 @@ import javax.annotation.Nullable;
  * https://mspace-dev.github.io
  */
 
-public class TileEntityTotemBase extends TileEntity
+public class TileEntityTotemBase extends TileEntityBase
 {
 	public boolean hasZombie;
 	public boolean hasSkeleton;
@@ -32,6 +27,7 @@ public class TileEntityTotemBase extends TileEntity
 	public boolean hasZombiePigman;
 	public boolean hasGhast;
 	public boolean hasMagmaCube;
+	public boolean isMaster;
 
 	private long cooldown;
 	private int cooldownTicks;
@@ -72,69 +68,68 @@ public class TileEntityTotemBase extends TileEntity
 	{
 		return hasZombie || hasSkeleton || hasCreeper || hasSpider ||
 				hasEnderman || hasWitch || hasSilverfish || hasSlime ||
-				hasBlaze || hasGhast || hasZombiePigman || hasMagmaCube;
+				hasBlaze || hasGhast || hasZombiePigman || hasMagmaCube || isMaster;
 	}
 
 	/**
-	 * Sets totem properties based on what block was placed above the totem base
+	 * Sets totem properties based on what blocks are placed above the totem base
 	 */
 	public void setTotemProperties()
 	{
 		resetTotemProperties();
 		Iterable<BlockPos> totemBaseRange = BlockPos.getAllInBox(pos, pos.add(0.0D, 12.0D, 0.0D));
 
-		for (BlockPos posRange : totemBaseRange)
+		for (BlockPos blockPos : totemBaseRange)
 		{
-			Block current = getWorld().getBlockState(posRange).getBlock();
+			Block current = getWorld().getBlockState(blockPos).getBlock();
 
 			if (current == Blocks.AIR)
-			{
 				break;
-			}
 
 			if (current == ModBlocks.zombie_totem)
+				hasZombie = true;
+			else if (current == ModBlocks.skeleton_totem)
+				hasSkeleton = true;
+			else if (current == ModBlocks.creeper_totem)
+				hasCreeper = true;
+			else if (current == ModBlocks.spider_totem)
+				hasSpider = true;
+			else if (current == ModBlocks.enderman_totem)
+				hasEnderman = true;
+			else if (current == ModBlocks.witch_totem)
+				hasWitch = true;
+			else if (current == ModBlocks.silverfish_totem)
+				hasSilverfish = true;
+			else if (current == ModBlocks.slime_totem)
+				hasSlime = true;
+			else if (current == ModBlocks.blaze_totem)
+				hasBlaze = true;
+			else if (current == ModBlocks.zombie_pigman_totem)
+				hasZombiePigman = true;
+			else if (current == ModBlocks.ghast_totem)
+				hasGhast = true;
+			else if (current == ModBlocks.magma_cube_totem)
+				hasMagmaCube = true;
+			else if (current == ModBlocks.overworld_totem)
 			{
 				hasZombie = true;
-			} else if (current == ModBlocks.skeleton_totem)
-			{
 				hasSkeleton = true;
-			} else if (current == ModBlocks.creeper_totem)
-			{
 				hasCreeper = true;
-			} else if (current == ModBlocks.spider_totem)
-			{
 				hasSpider = true;
-			} else if (current == ModBlocks.enderman_totem)
+			} else if (current == ModBlocks.nether_totem)
+			{
+				hasBlaze = true;
+				hasGhast = true;
+				hasMagmaCube = true;
+				hasZombiePigman = true;
+			} else if (current == ModBlocks.unnatural_totem)
 			{
 				hasEnderman = true;
-			} else if (current == ModBlocks.witch_totem)
-			{
 				hasWitch = true;
-			} else if (current == ModBlocks.silverfish_totem)
-			{
 				hasSilverfish = true;
-			} else if (current == ModBlocks.slime_totem)
-			{
 				hasSlime = true;
-			} else if (current == ModBlocks.blaze_totem)
-			{
-				hasBlaze = true;
-			} else if (current == ModBlocks.zombie_pigman_totem)
-			{
-				hasZombiePigman = true;
-			} else if (current == ModBlocks.ghast_totem)
-			{
-				hasGhast = true;
-			} else if (current == ModBlocks.magma_cube_totem)
-			{
-				hasMagmaCube = true;
-			} else if (current == new Block(Material.WOOD))
-			{
-				hasBlaze = true;
-				hasGhast = true;
-				hasMagmaCube = true;
-				hasZombiePigman = true;
-			}
+			} else if (current == ModBlocks.master_totem)
+				isMaster = true;
 		}
 	}
 
@@ -155,6 +150,7 @@ public class TileEntityTotemBase extends TileEntity
 		hasGhast = false;
 		hasZombiePigman = false;
 		hasMagmaCube = false;
+		isMaster = false;
 	}
 
 	/**
@@ -176,6 +172,7 @@ public class TileEntityTotemBase extends TileEntity
 		compound.setBoolean("hasZombiePigman", this.hasZombiePigman);
 		compound.setBoolean("hasGhast", this.hasGhast);
 		compound.setBoolean("hasMagmaCube", this.hasMagmaCube);
+		compound.setBoolean("isMaster", this.isMaster);
 		return compound;
 	}
 
@@ -197,34 +194,7 @@ public class TileEntityTotemBase extends TileEntity
 		this.hasZombiePigman = compound.getBoolean("hasZombiePigman");
 		this.hasGhast = compound.getBoolean("hasGhast");
 		this.hasMagmaCube = compound.getBoolean("hasMagmaCube");
+		this.isMaster = compound.getBoolean("isMaster");
 		super.readFromNBT(compound);
-	}
-
-	public void sendUpdates()
-	{
-		world.markBlockRangeForRenderUpdate(pos, pos);
-		world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
-		world.scheduleBlockUpdate(pos, getBlockType(), 0, 0);
-		markDirty();
-	}
-
-	@Override
-	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
-	{
-		super.onDataPacket(net, pkt);
-		handleUpdateTag(pkt.getNbtCompound());
-	}
-
-	@Override
-	public NBTTagCompound getUpdateTag()
-	{
-		return this.writeToNBT(new NBTTagCompound());
-	}
-
-	@Nullable
-	@Override
-	public SPacketUpdateTileEntity getUpdatePacket()
-	{
-		return new SPacketUpdateTileEntity(this.pos, 3, this.getUpdateTag());
 	}
 }

@@ -7,8 +7,8 @@ import io.github.mspacedev.handlers.LootDropsEventHandler;
 import io.github.mspacedev.handlers.TotemBaseEventHandler;
 import io.github.mspacedev.init.InitEntities;
 import io.github.mspacedev.init.InitRecipes;
+import io.github.mspacedev.init.InitTileEntities;
 import io.github.mspacedev.proxies.CommonProxy;
-import io.github.mspacedev.tiles.ModTileEntities;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -62,6 +62,7 @@ public class MonsterTotems
 			itemList.add(getSpawnEgg("spirit_magma_cube"));
 		}
 	};
+
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY, modId = Reference.MODID)
 	public static CommonProxy proxy;
 	@Mod.Instance(Reference.MODID)
@@ -77,7 +78,7 @@ public class MonsterTotems
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		InitEntities.registerEntities();
+		InitEntities.register();
 		proxy.preInit(event);
 	}
 
@@ -85,7 +86,7 @@ public class MonsterTotems
 	public void init(FMLInitializationEvent event)
 	{
 		proxy.init(event);
-		ModTileEntities.init();
+		InitTileEntities.register();
 		InitRecipes.register();
 	}
 

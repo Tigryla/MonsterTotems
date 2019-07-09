@@ -1,5 +1,9 @@
-package io.github.mspacedev.tiles;
+package io.github.mspacedev.init;
 
+import io.github.mspacedev.tiles.TileEntityInfusedLog;
+import io.github.mspacedev.tiles.TileEntityTotemBaseI;
+import io.github.mspacedev.tiles.TileEntityTotemBaseII;
+import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -8,9 +12,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * https://mspace-dev.github.io
  */
 
-public class ModTileEntities
+public class InitTileEntities
 {
-	public static void init()
+	public static void register()
 	{
 		GameRegistry.registerTileEntity(TileEntityTotemBaseI.class, "totem_base_i");
 		GameRegistry.registerTileEntity(TileEntityTotemBaseII.class, "totem_base_ii");

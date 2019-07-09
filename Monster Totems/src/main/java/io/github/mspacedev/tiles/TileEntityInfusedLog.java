@@ -3,7 +3,6 @@ package io.github.mspacedev.tiles;
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.blocks.totemheads.BlockTotemHeadBase;
 import net.minecraft.block.Block;
-import net.minecraft.tileentity.TileEntity;
 
 /**
  * Copyright © MSpaceDev 2019
@@ -11,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
  * https://mspace-dev.github.io
  */
 
-public class TileEntityInfusedLog extends TileEntity
+public class TileEntityInfusedLog extends TileEntityBase
 {
 	private int carveAmount = 0;
 

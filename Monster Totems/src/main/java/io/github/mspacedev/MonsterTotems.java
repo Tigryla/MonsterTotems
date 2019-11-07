@@ -38,7 +38,7 @@ public class MonsterTotems
 	public static final CreativeTabs creativeTab = new CreativeTabs(CreativeTabs.getNextID(), "monstertotems")
 	{
 		@Override
-		public ItemStack getTabIconItem()
+		public ItemStack createIcon()
 		{
 			return new ItemStack(ModBlocks.totem_base_iii);
 		}

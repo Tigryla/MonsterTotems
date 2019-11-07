@@ -1,9 +1,16 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:master_totem_bottom" },
-        "totem_pos=bottom": { "model": "monstertotems:master_totem_bottom" },
-        "totem_pos=middle": { "model": "monstertotems:master_totem_middle" },
-        "totem_pos=top": { "model": "monstertotems:master_totem_top" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:master_totem_bottom"
+    },
+    "totem_pos=bottom": {
+      "model": "monstertotems:master_totem_bottom"
+    },
+    "totem_pos=middle": {
+      "model": "monstertotems:master_totem_middle"
+    },
+    "totem_pos=top": {
+      "model": "monstertotems:master_totem_top"
     }
+  }
 }

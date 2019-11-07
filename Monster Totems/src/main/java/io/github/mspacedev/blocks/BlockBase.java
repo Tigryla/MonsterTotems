@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -29,6 +28,7 @@ public class BlockBase extends Block
 	{
 		super(materialIn);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
+		this.setTranslationKey(name);
 		this.setCreativeTab(MonsterTotems.creativeTab);
 	}
 
@@ -36,6 +36,7 @@ public class BlockBase extends Block
 	{
 		super(materialIn);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
+		this.setTranslationKey(name);
 		this.setCreativeTab(MonsterTotems.creativeTab);
 		this.tooltipText = tooltip;
 	}

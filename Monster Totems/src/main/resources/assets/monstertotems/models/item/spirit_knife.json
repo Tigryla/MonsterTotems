@@ -1,6 +1,6 @@
 {
-    "parent": "item/handheld",
-    "textures": {
-        "layer0": "monstertotems:items/spirit_knife"
-    }
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "monstertotems:items/spirit_knife"
+  }
 }

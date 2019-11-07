@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LCL",
+    "LPL",
+    "LIL"
+  ],
+  "key": {
+    "L": {
+      "type": "forge:ore_dict",
+      "ore": "logWood"
+    },
+    "I": {
+      "item": "monstertotems:spirit_ingot"
+    },
+    "P": {
+      "item": "monstertotems:spirit_powder"
+    },
+    "C": {
+      "item": "minecraft:carpet",
+      "data": 14
+    }
+  },
+  "result": {
+    "item": "monstertotems:totem_base_i"
+  }
+}

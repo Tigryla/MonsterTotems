@@ -1,4 +1,3 @@
-
 {
-    "parent": "monstertotems:block/slime_infused_log"
+  "parent": "monstertotems:block/slime_infused_log"
 }

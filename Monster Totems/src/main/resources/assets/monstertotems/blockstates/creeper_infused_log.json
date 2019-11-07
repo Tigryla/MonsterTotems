@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:creeper_infused_log"}
+  "variants": {
+    "normal": {
+      "model": "monstertotems:creeper_infused_log"
     }
+  }
 }

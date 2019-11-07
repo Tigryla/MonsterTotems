@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "monstertotems:overworld_totem"
+    },
+    {
+      "item": "monstertotems:unnatural_totem"
+    },
+    {
+      "item": "monstertotems:nether_totem"
+    }
+  ],
+  "result": {
+    "item": "monstertotems:master_totem"
+  }
+}

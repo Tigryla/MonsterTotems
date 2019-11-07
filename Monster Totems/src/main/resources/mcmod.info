@@ -1,16 +1,18 @@
 [
-{
-  "modid": "monstertotems",
-  "name": "Monster Totems",
-  "description": "Adds functional totems into your world",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["MSpaceDev"],
-  "credits": "",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "monstertotems",
+    "name": "Monster Totems",
+    "description": "Adds functional totems into your world",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "MSpaceDev"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

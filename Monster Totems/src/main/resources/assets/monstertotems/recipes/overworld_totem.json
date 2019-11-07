@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "monstertotems:zombie_totem"
+    },
+    {
+      "item": "monstertotems:skeleton_totem"
+    },
+    {
+      "item": "monstertotems:creeper_totem"
+    },
+    {
+      "item": "monstertotems:spider_totem"
+    }
+  ],
+  "result": {
+    "item": "monstertotems:overworld_totem"
+  }
+}

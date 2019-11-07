@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:zombie_pigman_totem" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:zombie_pigman_totem"
     }
+  }
 }

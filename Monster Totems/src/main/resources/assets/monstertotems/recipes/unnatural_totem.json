@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "monstertotems:enderman_totem"
+    },
+    {
+      "item": "monstertotems:witch_totem"
+    },
+    {
+      "item": "monstertotems:silverfish_totem"
+    },
+    {
+      "item": "monstertotems:slime_totem"
+    }
+  ],
+  "result": {
+    "item": "monstertotems:unnatural_totem"
+  }
+}

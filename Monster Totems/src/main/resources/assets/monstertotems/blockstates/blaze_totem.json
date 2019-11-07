@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:blaze_totem" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:blaze_totem"
     }
+  }
 }

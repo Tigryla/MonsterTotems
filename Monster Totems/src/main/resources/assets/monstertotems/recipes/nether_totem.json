@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "monstertotems:blaze_totem"
+    },
+    {
+      "item": "monstertotems:ghast_totem"
+    },
+    {
+      "item": "monstertotems:zombie_pigman_totem"
+    },
+    {
+      "item": "monstertotems:magma_cube_totem"
+    }
+  ],
+  "result": {
+    "item": "monstertotems:nether_totem"
+  }
+}

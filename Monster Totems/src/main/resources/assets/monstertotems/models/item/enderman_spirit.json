@@ -1,7 +1,6 @@
-
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "monstertotems:items/mob_spirits/enderman_spirit"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "monstertotems:items/mob_spirits/enderman_spirit"
+  }
 }

@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:enderman_infused_log"}
+  "variants": {
+    "normal": {
+      "model": "monstertotems:enderman_infused_log"
     }
+  }
 }

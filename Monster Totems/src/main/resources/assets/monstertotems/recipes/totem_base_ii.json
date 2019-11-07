@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QPQ",
+    "PTP",
+    "QPQ"
+  ],
+  "key": {
+    "Q": {
+      "type": "forge:ore_dict",
+      "ore": "gemQuartz"
+    },
+    "T": {
+      "item": "monstertotems:totem_base_i"
+    },
+    "P": {
+      "item": "monstertotems:spirit_powder"
+    }
+  },
+  "result": {
+    "item": "monstertotems:totem_base_ii"
+  }
+}

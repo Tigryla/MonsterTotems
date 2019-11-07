@@ -4,7 +4,6 @@ import io.github.mspacedev.MonsterTotems;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +26,7 @@ public class ItemSwordBase extends ItemSword
 	public ItemSwordBase(String name, ToolMaterial material, String tooltip)
 	{
 		super(material);
+		this.setTranslationKey(name);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
 		this.setCreativeTab(MonsterTotems.creativeTab);
 		this.tooltipText = tooltip;

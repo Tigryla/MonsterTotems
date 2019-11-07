@@ -1,4 +1,3 @@
-
 {
-    "parent": "monstertotems:block/creeper_totem"
+  "parent": "monstertotems:block/creeper_totem"
 }

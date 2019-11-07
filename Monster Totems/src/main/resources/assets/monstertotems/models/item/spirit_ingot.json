@@ -1,7 +1,6 @@
-
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "monstertotems:items/spirit_ingot"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "monstertotems:items/spirit_ingot"
+  }
 }

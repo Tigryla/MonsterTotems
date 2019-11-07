@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PIP",
+    "ITI",
+    "PIP"
+  ],
+  "key": {
+    "P": {
+      "type": "forge:ore_dict",
+      "ore": "gemPrismarine"
+    },
+    "I": {
+      "item": "monstertotems:spirit_ingot"
+    },
+    "T": {
+      "item": "monstertotems:totem_base_ii"
+    }
+  },
+  "result": {
+    "item": "monstertotems:totem_base_iii"
+  }
+}

@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:overworld_totem" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:overworld_totem"
     }
+  }
 }

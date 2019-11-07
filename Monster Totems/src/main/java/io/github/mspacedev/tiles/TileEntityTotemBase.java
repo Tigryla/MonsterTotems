@@ -1,7 +1,6 @@
 package io.github.mspacedev.tiles;
 
 import io.github.mspacedev.blocks.ModBlocks;
-import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;

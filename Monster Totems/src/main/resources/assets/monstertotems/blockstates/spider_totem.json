@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:spider_totem" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:spider_totem"
     }
+  }
 }

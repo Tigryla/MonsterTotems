@@ -46,7 +46,7 @@ public class TotemBaseEventHandler
 			{
 				for (int z = chunkPosZ - radius; z < chunkPosZ + radius; z++)
 				{
-					Map<BlockPos, TileEntity> currentChunkTE = event.getWorld().getChunkFromChunkCoords(x, z).getTileEntityMap();
+					Map<BlockPos, TileEntity> currentChunkTE = event.getWorld().getChunk(x, z).getTileEntityMap();
 					for (TileEntity te : currentChunkTE.values())
 					{
 						if (te != null)

@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:silverfish_totem" }
+  "variants": {
+    "normal": {
+      "model": "monstertotems:silverfish_totem"
     }
+  }
 }

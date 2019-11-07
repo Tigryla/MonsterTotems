@@ -1,4 +1,3 @@
-
 {
-    "parent": "monstertotems:block/zombie_totem"
+  "parent": "monstertotems:block/zombie_totem"
 }

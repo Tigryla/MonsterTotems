@@ -1,5 +1,7 @@
 {
   "variants": {
-    "normal": { "model": "monstertotems:totem_base_ii" }
+    "normal": {
+      "model": "monstertotems:totem_base_ii"
+    }
   }
 }

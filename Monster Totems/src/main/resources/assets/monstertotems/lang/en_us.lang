@@ -115,6 +115,7 @@ tooltip.slime_totem=Stops Slimes from spawning when placed on a totem base
 tooltip.blaze_totem=Stops Blazes from spawning when placed on a totem base
 tooltip.zombie_pigman_totem=Stops Zombie Pigmen from spawning when placed on a totem base
 tooltip.ghast_totem=Stops Ghasts from spawning when placed on a totem base
+tooltip.magma_cube_totem=Stops Magma Cubes from spawning when placed on a totem base
 tooltip.overworld_totem=Combines the effects of the Zombie, Skeleton, Creeper and Spider Totem Heads
 tooltip.nether_totem=Combines the effects of the Blaze, Ghast, Zombie Pigman and Magma Cube Totem Heads
 tooltip.unnatural_totem=Combines the effects of the Enderman, Witch, Silverfish and Slime Totem Heads

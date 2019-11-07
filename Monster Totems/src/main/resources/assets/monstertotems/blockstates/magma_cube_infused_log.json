@@ -1,6 +1,7 @@
-
 {
-    "variants": {
-        "normal": { "model": "monstertotems:magma_cube_infused_log"}
+  "variants": {
+    "normal": {
+      "model": "monstertotems:magma_cube_infused_log"
     }
+  }
 }

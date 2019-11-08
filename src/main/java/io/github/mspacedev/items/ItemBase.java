@@ -1,10 +1,10 @@
-package io.github.mspacedev.items.tools;
+package io.github.mspacedev.items;
 
 import io.github.mspacedev.MonsterTotems;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.ItemAxe;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -19,23 +19,14 @@ import java.util.List;
  * https://mspace-dev.github.io
  */
 
-public class ItemAxeBase extends ItemAxe
+public class ItemBase extends Item
 {
 	private String tooltipText;
 
-	public ItemAxeBase(String name, ToolMaterial material, float damage, float speed)
+	public ItemBase(String name, String tooltip)
 	{
-		super(material, damage, speed);
-		this.setTranslationKey(name);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
-		this.setCreativeTab(MonsterTotems.creativeTab);
-	}
-
-	public ItemAxeBase(String name, ToolMaterial material, float damage, float speed, String tooltip)
-	{
-		super(material, damage, speed);
-		this.setTranslationKey(name);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
+		this.setUnlocalizedName(name);
 		this.setCreativeTab(MonsterTotems.creativeTab);
 		this.tooltipText = tooltip;
 	}

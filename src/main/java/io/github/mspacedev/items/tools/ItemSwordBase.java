@@ -1,12 +1,11 @@
-package io.github.mspacedev.blocks;
+package io.github.mspacedev.items.tools;
 
 import io.github.mspacedev.MonsterTotems;
 import io.github.mspacedev.utils.Reference;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
@@ -20,23 +19,15 @@ import java.util.List;
  * https://mspace-dev.github.io
  */
 
-public class BlockBase extends Block
+public class ItemSwordBase extends ItemSword
 {
 	private String tooltipText;
 
-	public BlockBase(String name, Material materialIn)
+	public ItemSwordBase(String name, ToolMaterial material, String tooltip)
 	{
-		super(materialIn);
+		super(material);
+		this.setUnlocalizedName(name);
 		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
-		this.setTranslationKey(name);
-		this.setCreativeTab(MonsterTotems.creativeTab);
-	}
-
-	public BlockBase(String name, Material materialIn, String tooltip)
-	{
-		super(materialIn);
-		this.setRegistryName(new ResourceLocation(Reference.MODID, name));
-		this.setTranslationKey(name);
 		this.setCreativeTab(MonsterTotems.creativeTab);
 		this.tooltipText = tooltip;
 	}

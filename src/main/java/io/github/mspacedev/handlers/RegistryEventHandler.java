@@ -69,7 +69,7 @@ public class RegistryEventHandler
 
 		for (Block block : ModBlocks.BLOCKS)
 		{
-			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setTranslationKey(block.getTranslationKey()));
+			event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
 		}
 
 		Utils.getLogger().info("Monster Totems Items Registered");

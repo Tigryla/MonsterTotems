@@ -38,7 +38,7 @@ public class MonsterTotems
 	public static final CreativeTabs creativeTab = new CreativeTabs(CreativeTabs.getNextID(), "monstertotems")
 	{
 		@Override
-		public ItemStack createIcon()
+		public ItemStack getTabIconItem()
 		{
 			return new ItemStack(ModBlocks.totem_base_iii);
 		}
@@ -65,6 +65,7 @@ public class MonsterTotems
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY, modId = Reference.MODID)
 	public static CommonProxy proxy;
+
 	@Mod.Instance(Reference.MODID)
 	public static MonsterTotems instance;
 

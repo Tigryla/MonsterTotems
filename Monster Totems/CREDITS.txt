@@ -1,6 +1,0 @@
-This is Monster Totems // A Minecraft Mod.
-
-You can find the source code at all times at https://github.com/MSpaceDev/MonsterTotems
-
-This mod is free to use in any modpacks, without permission!
-The code/mod is authored by MSpaceDev.

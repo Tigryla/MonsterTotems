@@ -1,3 +1,11 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.blocks.ModBlocks;
@@ -20,12 +28,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 @Mod.EventBusSubscriber
 public class RegistryEventHandler

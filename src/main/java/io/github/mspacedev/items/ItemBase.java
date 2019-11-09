@@ -1,3 +1,11 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.items;
 
 import io.github.mspacedev.MonsterTotems;
@@ -12,12 +20,6 @@ import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 import java.util.List;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 public class ItemBase extends Item
 {

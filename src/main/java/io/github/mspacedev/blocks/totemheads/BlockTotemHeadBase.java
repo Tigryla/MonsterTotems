@@ -1,3 +1,11 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.blocks.totemheads;
 
 import io.github.mspacedev.blocks.BlockWoodBase;
@@ -8,12 +16,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 public class BlockTotemHeadBase extends BlockWoodBase
 {

@@ -1,10 +1,15 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev;
 
 import io.github.mspacedev.blocks.ModBlocks;
-import io.github.mspacedev.handlers.DrawBlockHighlightEventHandler;
-import io.github.mspacedev.handlers.EntityConversionEventHandler;
-import io.github.mspacedev.handlers.LootDropsEventHandler;
-import io.github.mspacedev.handlers.TotemBaseEventHandler;
+import io.github.mspacedev.handlers.*;
 import io.github.mspacedev.init.InitEntities;
 import io.github.mspacedev.init.InitRecipes;
 import io.github.mspacedev.init.InitTileEntities;
@@ -24,12 +29,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class MonsterTotems
@@ -99,5 +98,6 @@ public class MonsterTotems
 		MinecraftForge.EVENT_BUS.register(new LootDropsEventHandler());
 		MinecraftForge.EVENT_BUS.register(new EntityConversionEventHandler());
 		MinecraftForge.EVENT_BUS.register(new DrawBlockHighlightEventHandler());
+		MinecraftForge.EVENT_BUS.register(new TotemBaseRegistryEventHandler());
 	}
 }

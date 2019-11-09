@@ -1,3 +1,11 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.blocks.totembases;
 
 import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
@@ -7,12 +15,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 public class BlockTotemBaseIII extends BlockTotemBase
 {

@@ -1,21 +1,24 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.utils;
 
 import io.github.mspacedev.entities.*;
 import net.minecraft.util.math.AxisAlignedBB;
 
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
-
 public class Reference
 {
 	public static final String NAME = "Monster Totems";
 	public static final String MODID = "monstertotems";
-	public static final String VERSION = "[1.12]";
+	public static final String VERSION = "2.0.0";
 	public static final String COMMON_PROXY = "io.github.mspacedev.proxies.CommonProxy";
 	public static final String CLIENT_PROXY = "io.github.mspacedev.proxies.ClientProxy";
+	public static final String DATA_NAME = "totembaseregistries";
 
 	public static final Class[] ENTITIES = {
 			EntitySpiritZombie.class,
@@ -60,6 +63,4 @@ public class Reference
 			new AxisAlignedBB(1.0625D, 1.125D, -0.15625D, 1.15625D, 1.3125D, -0.0625D),
 			new AxisAlignedBB(1.0625D, 1.28125D, -0.09375D, 1.15625D, 1.4375D, 0.0D)
 	};
-
-	public static final AxisAlignedBB MASTER_TOTEM_BOUNDING_BOX = new AxisAlignedBB(0.0D, -1.0D, 0.0D, 1.0D, 2.0D, 1.0D);
 }

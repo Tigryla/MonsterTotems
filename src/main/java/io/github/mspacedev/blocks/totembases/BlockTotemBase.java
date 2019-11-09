@@ -1,6 +1,16 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.blocks.totembases;
 
 import io.github.mspacedev.blocks.BlockWoodBase;
+import io.github.mspacedev.registries.TotemBaseRegistries;
+import io.github.mspacedev.registries.TotemBaseRegistry;
 import io.github.mspacedev.tiles.TileEntityTotemBase;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.block.material.Material;
@@ -23,12 +33,6 @@ import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 import java.util.List;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 public class BlockTotemBase extends BlockWoodBase
 {
@@ -67,6 +71,11 @@ public class BlockTotemBase extends BlockWoodBase
 				if (worldIn.getTileEntity(pos) instanceof TileEntityTotemBase)
 				{
 					TileEntityTotemBase totemBase = (TileEntityTotemBase) worldIn.getTileEntity(pos);
+
+					// Add totem to registry for this dimension
+					TotemBaseRegistry registry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(worldIn.provider.getDimension());
+					registry.addTotem(pos);
+
 					totemBase.setTotemProperties();
 					totemBase.sendUpdates();
 				}
@@ -86,6 +95,11 @@ public class BlockTotemBase extends BlockWoodBase
 				if (worldIn.getTileEntity(pos) instanceof TileEntityTotemBase)
 				{
 					TileEntityTotemBase totemBase = (TileEntityTotemBase) worldIn.getTileEntity(pos);
+
+					// Remove totem from registry for this dimension
+					TotemBaseRegistry registry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(worldIn.provider.getDimension());
+					registry.removeTotem(pos);
+
 					totemBase.setTotemProperties();
 					totemBase.sendUpdates();
 				}

@@ -1,3 +1,11 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.tiles.TileEntityTotemBase;
@@ -12,15 +20,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber
 public class DrawBlockHighlightEventHandler
 {
-	private static final AxisAlignedBB MASTER_BOTTOM = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 3.0D, 1.0D);
-	private static final AxisAlignedBB MASTER_MIDDLE = new AxisAlignedBB(0.0D, -1.0D, 0.0D, 1.0D, 2.0D, 1.0D);
-	private static final AxisAlignedBB MASTER_TOP = new AxisAlignedBB(0.0D, 1.0D, 0.0D, 1.0D, -2.0D, 1.0D);
-
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public static void onDrawBlockHighlight(DrawBlockHighlightEvent event)
 	{
 		BlockPos pos = event.getTarget().getBlockPos();

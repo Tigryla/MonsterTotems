@@ -1,14 +1,16 @@
+/*
+ *  Copyright © MSpaceDev 2019
+ *  Do not distribute without proper permission from the author.
+ *
+ *  If you would like to contribute, create a pull request:
+ *  https://github.com/MSpaceDev/MonsterTotems
+ */
+
 package io.github.mspacedev.tiles;
 
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.blocks.totemheads.BlockTotemHeadBase;
 import net.minecraft.block.Block;
-
-/**
- * Copyright © MSpaceDev 2019
- * Do not distribute without proper permission from the author.
- * https://mspace-dev.github.io
- */
 
 public class TileEntityInfusedLog extends TileEntityBase
 {

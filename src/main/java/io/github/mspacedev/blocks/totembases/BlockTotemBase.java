@@ -28,6 +28,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 
@@ -145,39 +146,40 @@ public class BlockTotemBase extends BlockWoodBase
 
 					if (tile.hasActiveTotemHeads())
 					{
-						component.appendText(I18n.format("base.prevent"));
+						component.appendSibling(new TextComponentTranslation("base.prevent"));
+
 						if (tile.isMaster)
-							component.appendText("\n" + I18n.format("base.master"));
+							component = appendText("base.master", component);
 						else
 						{
 							if (tile.hasZombie)
-								component.appendText("\n" + I18n.format("base.zombies"));
+								component = appendText("base.zombies", component);
 							if (tile.hasCreeper)
-								component.appendText("\n" + I18n.format("base.creepers"));
+								component = appendText("base.creepers", component);
 							if (tile.hasSkeleton)
-								component.appendText("\n" + I18n.format("base.skeletons"));
+								component = appendText("base.skeletons", component);
 							if (tile.hasSpider)
-								component.appendText("\n" + I18n.format("base.spiders"));
+								component = appendText("base.spiders", component);
 							if (tile.hasEnderman)
-								component.appendText("\n" + I18n.format("base.endermen"));
+								component = appendText("base.endermen", component);
 							if (tile.hasWitch)
-								component.appendText("\n" + I18n.format("base.witches"));
+								component = appendText("base.witches", component);
 							if (tile.hasSilverfish)
-								component.appendText("\n" + I18n.format("base.silverfish"));
+								component = appendText("base.silverfish", component);
 							if (tile.hasSlime)
-								component.appendText("\n" + I18n.format("base.slimes"));
+								component = appendText("base.slimes", component);
 							if (tile.hasBlaze)
-								component.appendText("\n" + I18n.format("base.blazes"));
+								component = appendText("base.blazes", component);
 							if (tile.hasZombiePigman)
-								component.appendText("\n" + I18n.format("base.zombie_pigmen"));
+								component = appendText("base.zombie_pigmen", component);
 							if (tile.hasGhast)
-								component.appendText("\n" + I18n.format("base.ghasts"));
+								component = appendText("base.ghasts", component);
 							if (tile.hasMagmaCube)
-								component.appendText("\n" + I18n.format("base.magma_cubes"));
+								component = appendText("base.magma_cubes", component);
 						}
 					} else
 					{
-						component.appendText(I18n.format("base.no_active_heads"));
+						component.appendSibling(new TextComponentTranslation("base.no_active_heads"));
 					}
 
 					player.sendMessage(component);
@@ -186,5 +188,13 @@ public class BlockTotemBase extends BlockWoodBase
 		}
 
 		return true;
+	}
+
+	private ITextComponent appendText(String translationKey, ITextComponent component)
+	{
+		component.appendText("\n");
+		component.appendSibling(new TextComponentTranslation(translationKey));
+
+		return component;
 	}
 }

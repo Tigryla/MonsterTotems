@@ -8,18 +8,11 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-/*
- *  Copyright © MSpaceDev 2019
- *  Do not distribute without proper permission from the author.
- *
- *  If you would like to contribute, create a pull request:
- *  https://github.com/MSpaceDev/MonsterTotems
- */
 
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.12.2-1.0.0"
+version = "2.0.0"
 group = "io.github.mspacedev.monstertotems" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "MonsterTotems"
 

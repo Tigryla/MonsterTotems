@@ -99,5 +99,8 @@ public class MonsterTotems
 		MinecraftForge.EVENT_BUS.register(new EntityConversionEventHandler());
 		MinecraftForge.EVENT_BUS.register(new DrawBlockHighlightEventHandler());
 		MinecraftForge.EVENT_BUS.register(new TotemBaseRegistryEventHandler());
+
+		// Initialise config event handler to sync config changes
+		MinecraftForge.EVENT_BUS.register(new Configs());
 	}
 }

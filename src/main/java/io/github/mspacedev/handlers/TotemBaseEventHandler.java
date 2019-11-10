@@ -8,6 +8,7 @@
 
 package io.github.mspacedev.handlers;
 
+import io.github.mspacedev.Configs;
 import io.github.mspacedev.registries.TotemBaseRegistries;
 import io.github.mspacedev.registries.TotemBaseRegistry;
 import io.github.mspacedev.tiles.TileEntityTotemBase;
@@ -35,7 +36,6 @@ public class TotemBaseEventHandler
 		checkTotemBaseDistance(event);
 	}
 
-	// TODO: Add config for distance radius.
 	private static void checkTotemBaseDistance(LivingSpawnEvent.CheckSpawn event)
 	{
 		World world = event.getWorld();
@@ -44,25 +44,24 @@ public class TotemBaseEventHandler
 		TotemBaseRegistry totemBaseRegistry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(dimID);
 		BlockPos entityPos = event.getEntity().getPosition();
 
-		if (!world.isRemote)
+		if (!world.isRemote && event.isSpawner() == Configs.preventSpawners)
 		{
 			for (BlockPos pos : totemBaseRegistry.getPositions())
 			{
-				// TODO: Add config option between square and cylinder
 				TileEntity te = world.getTileEntity(pos);
 				if (te != null)
 				{
-					if (te instanceof TileEntityTotemBaseI && !Utils.canSpawnWithinRange(64.0D, pos, entityPos, true))
+					if (te instanceof TileEntityTotemBaseI && Utils.canSpawnWithinRange(Configs.totemBaseIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
 					}
-					else if (te instanceof TileEntityTotemBaseII && !Utils.canSpawnWithinRange(96.0D, pos, entityPos, true))
+					else if (te instanceof TileEntityTotemBaseII && Utils.canSpawnWithinRange(Configs.totemBaseIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
 					}
-					else if (te instanceof TileEntityTotemBaseIII && !Utils.canSpawnWithinRange(128.0D, pos, entityPos, true))
+					else if (te instanceof TileEntityTotemBaseIII && Utils.canSpawnWithinRange(Configs.totemBaseIIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;

@@ -155,7 +155,7 @@ public class TileEntityTotemBase extends TileEntityBase
 	}
 
 	/**
-	 * Retrieves all totem head stats when the tile entity is loaded
+	 * Saves all totem head stats when the tile entity is unloaded
 	 */
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound)
@@ -178,7 +178,7 @@ public class TileEntityTotemBase extends TileEntityBase
 	}
 
 	/**
-	 * Saves all totem head stats when the tile entity is unloaded
+	 * Retrieves all totem head stats when the tile entity is loaded
 	 */
 	@Override
 	public void readFromNBT(NBTTagCompound compound)
@@ -198,4 +198,6 @@ public class TileEntityTotemBase extends TileEntityBase
 		this.isMaster = compound.getBoolean("isMaster");
 		super.readFromNBT(compound);
 	}
+
+
 }

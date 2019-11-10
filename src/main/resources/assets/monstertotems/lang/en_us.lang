@@ -1,6 +1,6 @@
 # English US
 
-#### Creative Tab ####
+## Creative Tab ##
 itemGroup.monstertotems=Monster Totems
 
 #### Entities ####
@@ -149,13 +149,3 @@ base.zombie_pigmen=Zombie Pigmen
 base.ghasts=Ghasts
 base.magma_cubes=Magma Cubes
 base.master=All monsters
-
-#### Config ####
-# General
-config.isCubicRange=Is Cubic Range?
-config.preventSpawners=Prevent Spawners?
-
-# Totem Base
-config.base.i_range=Totem Base I Range
-config.base.ii_range=Totem Base II Range
-config.base.iii_range=Totem Base III Range

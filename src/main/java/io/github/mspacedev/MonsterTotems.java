@@ -13,7 +13,6 @@ import io.github.mspacedev.handlers.*;
 import io.github.mspacedev.init.InitEntities;
 import io.github.mspacedev.init.InitRecipes;
 import io.github.mspacedev.init.InitTileEntities;
-import io.github.mspacedev.network.packets.PacketDispatcher;
 import io.github.mspacedev.proxies.CommonProxy;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,8 +22,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -91,24 +88,16 @@ public class MonsterTotems
 		proxy.init(event);
 		InitTileEntities.register();
 		InitRecipes.register();
-
-		ConfigManager.sync(Reference.MODID, Config.Type.INSTANCE);
 	}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		proxy.postInit(event);
-
-		PacketDispatcher.registerPackets();
-
 		MinecraftForge.EVENT_BUS.register(new TotemBaseEventHandler());
 		MinecraftForge.EVENT_BUS.register(new LootDropsEventHandler());
 		MinecraftForge.EVENT_BUS.register(new EntityConversionEventHandler());
 		MinecraftForge.EVENT_BUS.register(new DrawBlockHighlightEventHandler());
 		MinecraftForge.EVENT_BUS.register(new TotemBaseRegistryEventHandler());
-
-		// Initialise config event handler to sync config changes
-		MinecraftForge.EVENT_BUS.register(new Configs());
 	}
 }

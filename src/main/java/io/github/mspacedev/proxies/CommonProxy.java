@@ -8,12 +8,9 @@
 
 package io.github.mspacedev.proxies;
 
-import io.github.mspacedev.tiles.TileEntityTotemBase;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -41,6 +38,5 @@ public class CommonProxy
 
 	public void genMagicParticle(Block block, BlockPos pos, float colorRed, float colorGreen, float colorBlue)
 	{
-
 	}
 }

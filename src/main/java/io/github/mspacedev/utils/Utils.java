@@ -35,8 +35,8 @@ public class Utils
 			double maxX = totemBasePos.getX() + range + 1;
 			double maxZ = totemBasePos.getZ() + range + 1;
 
-			return minX <= entityPos.getX() && maxX >= entityPos.getX() &&
-					minZ <= entityPos.getZ() && maxZ >= entityPos.getZ();
+			return !(minX <= entityPos.getX() && maxX >= entityPos.getX() &&
+					minZ <= entityPos.getZ() && maxZ >= entityPos.getZ());
 		}
 		else
 		{
@@ -45,7 +45,7 @@ public class Utils
 					Math.pow(totemBasePos.getZ() - entityPos.getZ(), 2)
 			);
 
-			return distance <= range;
+			return distance >= range;
 		}
 	}
 }

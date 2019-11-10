@@ -153,7 +153,6 @@ base.master=All monsters
 #### Config ####
 # General
 config.isCubicRange=Is Cubic Range?
-config.preventSpawners=Prevent Spawners?
 
 # Totem Base
 config.base.i_range=Totem Base I Range

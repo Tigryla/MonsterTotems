@@ -11,7 +11,7 @@ package io.github.mspacedev.items.tools;
 import io.github.mspacedev.MonsterTotems;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
@@ -35,7 +35,7 @@ public class ItemSwordBase extends ItemSword
 	}
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
 	{
 		if (tooltipText == null)
 		{
@@ -49,6 +49,7 @@ public class ItemSwordBase extends ItemSword
 		{
 			tooltip.add(I18n.format("tooltip.shift"));
 		}
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+
+		super.addInformation(stack, playerIn, tooltip, advanced);
 	}
 }

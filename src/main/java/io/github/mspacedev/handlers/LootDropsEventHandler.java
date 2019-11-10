@@ -26,7 +26,7 @@ public class LootDropsEventHandler
 	@SubscribeEvent
 	public void interceptMobDeath(LivingDropsEvent event)
 	{
-		Entity killerEntity = event.getSource().getTrueSource();
+		Entity killerEntity = event.getSource().getSourceOfDamage();
 
 		if (killerEntity instanceof EntityLivingBase)
 		{

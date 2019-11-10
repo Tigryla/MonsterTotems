@@ -10,7 +10,7 @@ package io.github.mspacedev.client.particles;
 
 import io.github.mspacedev.handlers.RegistryEventHandler;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -67,7 +67,7 @@ public class ParticleMagic extends Particle
 	}
 
 	@Override
-	public boolean shouldDisableDepth()
+	public boolean isTransparent()
 	{
 		return true;
 	}
@@ -84,7 +84,7 @@ public class ParticleMagic extends Particle
 	}
 
 	@Override
-	public void renderParticle(BufferBuilder buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)
+	public void renderParticle(VertexBuffer buffer, Entity entityIn, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ)
 	{
 		float f = (float) this.particleTextureIndexX / 16.0F;
 		float f1 = f + 0.0624375F;
@@ -120,9 +120,9 @@ public class ParticleMagic extends Particle
 		{
 			float f8 = this.particleAngle + (this.particleAngle - this.prevParticleAngle) * partialTicks;
 			float f9 = MathHelper.cos(f8 * 0.5F);
-			float f10 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.x;
-			float f11 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.y;
-			float f12 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.z;
+			float f10 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.xCoord;
+			float f11 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.yCoord;
+			float f12 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.zCoord;
 			Vec3d vec3d = new Vec3d((double) f10, (double) f11, (double) f12);
 
 			for (int l = 0; l < 4; ++l)
@@ -131,10 +131,10 @@ public class ParticleMagic extends Particle
 			}
 		}
 
-		buffer.pos((double) f5 + avec3d[0].x, (double) f6 + avec3d[0].y, (double) f7 + avec3d[0].z).tex((double) f1, (double) f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-		buffer.pos((double) f5 + avec3d[1].x, (double) f6 + avec3d[1].y, (double) f7 + avec3d[1].z).tex((double) f1, (double) f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-		buffer.pos((double) f5 + avec3d[2].x, (double) f6 + avec3d[2].y, (double) f7 + avec3d[2].z).tex((double) f, (double) f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
-		buffer.pos((double) f5 + avec3d[3].x, (double) f6 + avec3d[3].y, (double) f7 + avec3d[3].z).tex((double) f, (double) f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+		buffer.pos((double) f5 + avec3d[0].xCoord, (double) f6 + avec3d[0].yCoord, (double) f7 + avec3d[0].zCoord).tex((double) f1, (double) f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+		buffer.pos((double) f5 + avec3d[1].xCoord, (double) f6 + avec3d[1].yCoord, (double) f7 + avec3d[1].zCoord).tex((double) f1, (double) f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+		buffer.pos((double) f5 + avec3d[2].xCoord, (double) f6 + avec3d[2].yCoord, (double) f7 + avec3d[2].zCoord).tex((double) f, (double) f2).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
+		buffer.pos((double) f5 + avec3d[3].xCoord, (double) f6 + avec3d[3].yCoord, (double) f7 + avec3d[3].zCoord).tex((double) f, (double) f3).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
 	}
 
 	@Override

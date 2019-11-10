@@ -9,20 +9,21 @@
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.registries.TotemBaseRegistries;
-import io.github.mspacedev.registries.TotemBaseRegistry;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagIntArray;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldSavedData;
 import net.minecraft.world.storage.MapStorage;
-import net.minecraft.world.storage.WorldSavedData;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Mod.EventBusSubscriber
 public class TotemBaseRegistryEventHandler
@@ -31,8 +32,7 @@ public class TotemBaseRegistryEventHandler
 	@SubscribeEvent
 	public void OnWorldLoad(WorldEvent.Load event)
 	{
-		World world = event.getWorld();
-		TotemBaseData.load(world);
+		TotemBaseData.load(event.getWorld());
 	}
 
 	// Save totem base positional data from registries
@@ -40,30 +40,39 @@ public class TotemBaseRegistryEventHandler
 	public void OnWorldUnload(WorldEvent.Unload event)
 	{
 		World world = event.getWorld();
-		int dimID = world.provider.getDimension();
-		ArrayList<BlockPos> positions = getPositionsFromRegistry(dimID);
+		Integer[] dimIDs = getAllDimensionIDs();
 
-		if (!positions.isEmpty())
-		{
-			TotemBaseData.save(world, dimID, positions);
-			Utils.getLogger().info("Positional data saved.");
-		} else
-			Utils.getLogger().info("Positional data empty!");
+		TotemBaseData.save(world, dimIDs);
+		Utils.getLogger().info("Positional data saved for dimensions: " + Arrays.toString(dimIDs));
 	}
 
-	private ArrayList<BlockPos> getPositionsFromRegistry(int dimID)
+	private Integer[] getAllDimensionIDs()
 	{
-		TotemBaseRegistry registry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(dimID);
+		DimensionType[] dimTypes = DimensionType.values();
 
-		return registry.getPositions();
+		ArrayList<Integer> dimIDsArray = new ArrayList<>();
+		for (DimensionType dimType : dimTypes)
+		{
+			int[] ids = DimensionManager.getDimensions(dimType);
+
+			for (int i : ids)
+				dimIDsArray.add(i);
+		}
+
+		Integer[] dimIDs = new Integer[dimIDsArray.size()];
+		for (int i = 0; i < dimIDsArray.size(); i++)
+		{
+			dimIDs[i] = dimIDsArray.get(i);
+		}
+
+		return dimIDs;
 	}
 
 	public static class TotemBaseData extends WorldSavedData
 	{
 		private static final String DATA_NAME = "totembaseregistries";
 
-		private int dimID;
-		private ArrayList<BlockPos> positions;
+		private Integer[] dimIDs;
 
 		// Default constructor to prevent runtime exception from MapStorage#getOrLoadData
 		public TotemBaseData(String name)
@@ -71,12 +80,10 @@ public class TotemBaseRegistryEventHandler
 			super(name);
 		}
 
-		TotemBaseData(int dimID, ArrayList<BlockPos> positions)
+		TotemBaseData(Integer[] dimIDs)
 		{
 			super(DATA_NAME);
-
-			this.dimID = dimID;
-			this.positions = positions;
+			this.dimIDs = dimIDs;
 		}
 
 		public static TotemBaseData load(World world)
@@ -94,11 +101,11 @@ public class TotemBaseRegistryEventHandler
 			return data;
 		}
 
-		public static void save(World world, int dimID, ArrayList<BlockPos> positions)
+		public static void save(World world, Integer[] dimIDs)
 		{
 			MapStorage storage = world.getMapStorage();
 
-			TotemBaseData data = new TotemBaseData(dimID, positions);
+			TotemBaseData data = new TotemBaseData(dimIDs);
 			storage.setData(DATA_NAME, data);
 
 			data.markDirty();
@@ -124,9 +131,9 @@ public class TotemBaseRegistryEventHandler
 					{
 						positions.add(
 								new BlockPos(
-										coords[i],
-										coords[i + 1],
-										coords[i + 2]
+									coords[i + 0],
+									coords[i + 1],
+									coords[i + 2]
 								)
 						);
 					}
@@ -139,22 +146,28 @@ public class TotemBaseRegistryEventHandler
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound)
 		{
-			NBTTagIntArray coords = new NBTTagIntArray(getCoordsFromBlockPositions(positions));
-
-			compound.setTag(Integer.toString(dimID), coords);
+			for (int dimID : dimIDs)
+			{
+				ArrayList<BlockPos> positions = TotemBaseRegistries.getTotemBaseRegistryFromDimension(dimID).getPositions();
+				NBTTagIntArray coords = new NBTTagIntArray(getCoordsFromBlockPositions(positions));
+				compound.setTag(Integer.toString(dimID), coords);
+			}
 
 			return compound;
 		}
 
-		private ArrayList<Integer> getCoordsFromBlockPositions(ArrayList<BlockPos> positions)
+		private int[] getCoordsFromBlockPositions(ArrayList<BlockPos> positions)
 		{
-			ArrayList<Integer> coords = new ArrayList<>();
+			int[] coords = new int[positions.size() * 3];
 
+			int i = 0;
 			for (BlockPos pos : positions)
 			{
-				coords.add(pos.getX());
-				coords.add(pos.getY());
-				coords.add(pos.getZ());
+				coords[i + 0] = pos.getX();
+				coords[i + 1] = pos.getY();
+				coords[i + 2] = pos.getZ();
+
+				i += 3;
 			}
 
 			return coords;

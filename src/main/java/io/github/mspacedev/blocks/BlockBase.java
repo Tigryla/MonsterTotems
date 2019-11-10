@@ -13,13 +13,11 @@ import io.github.mspacedev.utils.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class BlockBase extends Block
@@ -44,7 +42,7 @@ public class BlockBase extends Block
 	}
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced)
 	{
 		if (tooltipText == null)
 		{
@@ -58,6 +56,7 @@ public class BlockBase extends Block
 		{
 			tooltip.add(I18n.format("tooltip.shift"));
 		}
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+
+		super.addInformation(stack, player, tooltip, advanced);
 	}
 }

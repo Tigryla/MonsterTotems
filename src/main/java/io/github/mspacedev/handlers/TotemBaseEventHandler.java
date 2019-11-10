@@ -44,7 +44,7 @@ public class TotemBaseEventHandler
 		TotemBaseRegistry totemBaseRegistry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(dimID);
 		BlockPos entityPos = event.getEntity().getPosition();
 
-		if (!world.isRemote && event.isSpawner() == Configs.preventSpawners)
+		if (!world.isRemote)
 		{
 			for (BlockPos pos : totemBaseRegistry.getPositions())
 			{

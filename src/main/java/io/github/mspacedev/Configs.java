@@ -27,13 +27,6 @@ public class Configs
 	})
 	public static boolean isCubicRange = true;
 
-	@Config.LangKey("config.preventSpawners")
-	@Config.Comment({
-			"§eIf false, Totem Bases will allow spawns from spawners within range.",
-			"§cIf true, Totem Bases will prevent spawns from spawners within range."
-	})
-	public static boolean preventSpawners = false;
-
 	@Config.LangKey("config.base.i_range")
 	@Config.Comment({"The range mobs will not spawn around a Totem Base I (blocks)."})
 	public static int totemBaseIRange = 64;

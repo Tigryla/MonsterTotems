@@ -19,13 +19,20 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Config(modid = Reference.MODID, name = Reference.MODID, type = Config.Type.INSTANCE)
 public class Configs
 {
-	@Config.LangKey("config.isCubicRange")
+	@Config.LangKey("config.is_cubic_range")
 	@Config.Comment({
 			"§eIf true, Totem Bases will prevent spawns within a cubic radius.",
 			"§cIf false, Totem Bases will prevent spawns within a cylindrical radius.",
 			"§fNOTE: The Y-level of entities are ignored. The Totem Base range is always from bedrock to world height!"
 	})
 	public static boolean isCubicRange = true;
+
+	@Config.LangKey("config.random_spirits")
+	@Config.Comment({
+			"§eIf false, mobs will only drop their specific spirit on death.",
+			"§cIf true, mobs will drop a random spirit on death."
+	})
+	public static boolean randomSpirits = false;
 
 	@Config.LangKey("config.base.i_range")
 	@Config.Comment({"The range mobs will not spawn around a Totem Base I (blocks)."})

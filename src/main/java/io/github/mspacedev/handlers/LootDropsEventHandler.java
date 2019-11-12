@@ -8,6 +8,7 @@
 
 package io.github.mspacedev.handlers;
 
+import io.github.mspacedev.Configs;
 import io.github.mspacedev.entities.*;
 import io.github.mspacedev.items.ModItems;
 import net.minecraft.entity.Entity;
@@ -19,6 +20,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.Random;
 
 @Mod.EventBusSubscriber
 public class LootDropsEventHandler
@@ -33,9 +36,17 @@ public class LootDropsEventHandler
 			EntityLivingBase killer = (EntityLivingBase) killerEntity;
 			if (killer.getHeldItemMainhand().getItem() == ModItems.spirit_knife)
 			{
-				checkMob(event);
+				if (Configs.randomSpirits)
+					dropSpirit(getRandom(ModItems.SPIRITS), event);
+				else
+					checkMob(event);
 			}
 		}
+	}
+
+	public static Item getRandom(Item[] array) {
+		int rnd = new Random().nextInt(array.length);
+		return array[rnd];
 	}
 
 	private void checkMob(LivingDropsEvent event)

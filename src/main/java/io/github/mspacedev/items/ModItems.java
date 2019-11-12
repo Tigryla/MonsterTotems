@@ -58,4 +58,19 @@ public class ModItems
 			ghast_spirit,
 			magma_cube_spirit
 	};
+
+	public static final Item[] SPIRITS = {
+			zombie_spirit,
+			skeleton_spirit,
+			creeper_spirit,
+			spider_spirit,
+			enderman_spirit,
+			witch_spirit,
+			silverfish_spirit,
+			slime_spirit,
+			blaze_spirit,
+			zombie_pigman_spirit,
+			ghast_spirit,
+			magma_cube_spirit
+	};
 }

@@ -1,10 +1,39 @@
 # English US
 
+#
+# Translation Instruction:
+#
+# Only replace the words on the right side of the =.
+# Do not touch the words on the left. Once translated, save the file as "<region>.lang". e.g. "en_gb.lang"
+# Replace the first line of this file with the new region.
+#
+# Please create a pull request here once complete: https://github.com/MSpaceDev/MonsterTotems/pulls
+# Make the title of the pull request, "Added <region> translation support"
+#
+# Thank you for the help!
+#
+
 #### Creative Tab ####
 itemGroup.monstertotems=Monster Totems
 
 #### Entities ####
-entity.monstertotems.spirit_creeper.name=Spirit Creeper
+entity.spirit_zombie.name=Spirit Zombie
+entity.spirit_skeleton.name=Spirit Skeleton
+entity.spirit_creeper.name=Spirit Creeper
+entity.spirit_spider.name=Spirit Spider
+entity.spirit_enderman.name=Spirit Enderman
+entity.spirit_witch.name=Spirit Witch
+entity.spirit_silverfish.name=Spirit Silverfish
+entity.spirit_slime.name=Spirit Slime
+entity.spirit_blaze.name=Spirit Blaze
+entity.spirit_ghast.name=Spirit Ghast
+entity.spirit_zombie_pigman.name=Spirit Zombie Pigman
+entity.spirit_magma_cube.name=Spirit Magma Cube
+entity.spirit_cave_spider.name=Spirit Cave Spider
+entity.spirit_husk.name=Spirit Husk
+entity.spirit_stray.name=Spirit Stray
+entity.spirit_wither_skeleton.name=Spirit Wither Skeleton
+entity.spirit_zombie_villager.name=Spirit Zombie Villager
 
 #### Blocks ####
 # Totem Bases
@@ -152,7 +181,9 @@ base.master=All monsters
 
 #### Config ####
 # General
-config.isCubicRange=Is Cubic Range?
+config.is_cubic_range=Is Cubic Range?
+config.prevent_spawners=Prevent Spawners
+config.random_spirits=Random Spirits
 
 # Totem Base
 config.base.i_range=Totem Base I Range

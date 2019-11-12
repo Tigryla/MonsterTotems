@@ -12,6 +12,9 @@ import io.github.mspacedev.items.spirits.*;
 import io.github.mspacedev.items.tools.ItemCarvingTool;
 import io.github.mspacedev.items.tools.ItemSpiritKnife;
 import net.minecraft.item.Item;
+import scala.actors.threadpool.Arrays;
+
+import java.util.ArrayList;
 
 public class ModItems
 {
@@ -37,7 +40,7 @@ public class ModItems
 	public static final Item ghast_spirit = new ItemGhastSpirit("ghast_spirit");
 	public static final Item magma_cube_spirit = new ItemMagmaCubeSpirit("magma_cube_spirit");
 
-	public static Item[] ITEMS = {
+	public static final Item[] ITEMS = {
 			// Tools
 			carving_tool,
 			spirit_knife,
@@ -45,6 +48,21 @@ public class ModItems
 			spirit_powder,
 			spirit_ingot,
 			// Mob Spirits
+			zombie_spirit,
+			skeleton_spirit,
+			creeper_spirit,
+			spider_spirit,
+			enderman_spirit,
+			witch_spirit,
+			silverfish_spirit,
+			slime_spirit,
+			blaze_spirit,
+			zombie_pigman_spirit,
+			ghast_spirit,
+			magma_cube_spirit
+	};
+
+	public static final Item[] SPIRITS = {
 			zombie_spirit,
 			skeleton_spirit,
 			creeper_spirit,

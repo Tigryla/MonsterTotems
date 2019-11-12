@@ -9,6 +9,7 @@
 package io.github.mspacedev.handlers;
 
 import io.github.mspacedev.blocks.ModBlocks;
+import io.github.mspacedev.entities.ModEntities;
 import io.github.mspacedev.items.ModItems;
 import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.utils.Utils;
@@ -26,8 +27,10 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber
 public class RegistryEventHandler
@@ -91,5 +94,16 @@ public class RegistryEventHandler
 		}
 
 		Utils.getLogger().info("Monster Totems Models Registered");
+	}
+
+	@SubscribeEvent
+	public static void registerEntities(RegistryEvent.Register<EntityEntry> event)
+	{
+		final IForgeRegistry<EntityEntry> registry = event.getRegistry();
+
+		for (final EntityEntry entityEntry : ModEntities.ENTITIES)
+		{
+			registry.register(entityEntry);
+		}
 	}
 }

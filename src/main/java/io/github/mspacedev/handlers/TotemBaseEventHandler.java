@@ -44,7 +44,10 @@ public class TotemBaseEventHandler
 		TotemBaseRegistry totemBaseRegistry = TotemBaseRegistries.getTotemBaseRegistryFromDimension(dimID);
 		BlockPos entityPos = event.getEntity().getPosition();
 
-		if (!world.isRemote && event.isSpawner() == Configs.preventSpawners)
+		if (event.isSpawner() && !Configs.preventSpawners)
+			return;
+
+		if (!world.isRemote)
 		{
 			for (BlockPos pos : totemBaseRegistry.getPositions())
 			{
@@ -55,13 +58,11 @@ public class TotemBaseEventHandler
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
-					}
-					else if (te instanceof TileEntityTotemBaseII && Utils.canSpawnWithinRange(Configs.totemBaseIIRange, pos, entityPos, Configs.isCubicRange))
+					} else if (te instanceof TileEntityTotemBaseII && Utils.canSpawnWithinRange(Configs.totemBaseIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
-					}
-					else if (te instanceof TileEntityTotemBaseIII && Utils.canSpawnWithinRange(Configs.totemBaseIIIRange, pos, entityPos, Configs.isCubicRange))
+					} else if (te instanceof TileEntityTotemBaseIII && Utils.canSpawnWithinRange(Configs.totemBaseIIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;

@@ -14,7 +14,6 @@ import io.github.mspacedev.items.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -27,6 +26,12 @@ import java.util.Random;
 @Mod.EventBusSubscriber
 public class LootDropsEventHandler
 {
+	public static Item getRandom(Item[] array)
+	{
+		int rnd = new Random().nextInt(array.length);
+		return array[rnd];
+	}
+
 	@SubscribeEvent
 	public void interceptMobDeath(LivingDropsEvent event)
 	{
@@ -43,11 +48,6 @@ public class LootDropsEventHandler
 					checkMob(event);
 			}
 		}
-	}
-
-	public static Item getRandom(Item[] array) {
-		int rnd = new Random().nextInt(array.length);
-		return array[rnd];
 	}
 
 	private void checkMob(LivingDropsEvent event)

@@ -11,7 +11,7 @@ package io.github.mspacedev.handlers;
 import io.github.mspacedev.tiles.TileEntityTotemBase;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderGlobal;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -62,7 +62,7 @@ public class DrawBlockHighlightEventHandler
 		double d0 = player.lastTickPosX + (player.posX - player.lastTickPosX) * partialTicks;
 		double d1 = player.lastTickPosY + (player.posY - player.lastTickPosY) * partialTicks;
 		double d2 = player.lastTickPosZ + (player.posZ - player.lastTickPosZ) * partialTicks;
-		RenderGlobal.drawSelectionBoundingBox(axisAlignedBB.offset(-d0, -d1, -d2).offset(movingObjectPositionIn.getBlockPos()), 0.0F, 0.0F, 0.0F, 0.4F);
+		WorldRenderer.drawSelectionBoundingBox(axisAlignedBB.offset(-d0, -d1, -d2).offset(movingObjectPositionIn.getBlockPos()), 0.0F, 0.0F, 0.0F, 0.4F);
 
 		GlStateManager.depthMask(true);
 		GlStateManager.enableTexture2D();

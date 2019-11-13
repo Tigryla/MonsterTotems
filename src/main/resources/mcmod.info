@@ -2,16 +2,16 @@
   {
     "modid": "monstertotems",
     "name": "Monster Totems",
-    "description": "A new, unique way to prevent monster spawns.",
+    "description": "",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "https://github.com/MSpaceDev/MonsterTotems",
+    "url": "",
     "updateUrl": "",
     "authorList": [
-      "MSpaceDev"
+      ""
     ],
     "credits": "",
-    "logoFile": "assets/monstertotems/textures/logo.png",
+    "logoFile": "",
     "screenshots": [
       "assets/monstertotems/textures/convert.png",
       "assets/monstertotems/textures/infuse_carve.png"

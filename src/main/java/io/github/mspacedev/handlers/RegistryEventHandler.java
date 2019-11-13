@@ -14,7 +14,7 @@ import io.github.mspacedev.items.ModItems;
 import io.github.mspacedev.utils.Reference;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.item.Item;

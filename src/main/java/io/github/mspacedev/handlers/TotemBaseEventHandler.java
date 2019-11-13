@@ -18,7 +18,6 @@ import io.github.mspacedev.tiles.TileEntityTotemBaseIII;
 import io.github.mspacedev.utils.Utils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.monster.*;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

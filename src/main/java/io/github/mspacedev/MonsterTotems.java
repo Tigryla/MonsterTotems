@@ -10,31 +10,29 @@ package io.github.mspacedev;
 
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.handlers.*;
-import io.github.mspacedev.entities.ModEntities;
 import io.github.mspacedev.init.InitRecipes;
 import io.github.mspacedev.init.InitTileEntities;
 import io.github.mspacedev.proxies.CommonProxy;
 import io.github.mspacedev.utils.Reference;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.event.FMLInitializationEvent;
+import net.minecraftforge.fml.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class MonsterTotems
 {
 
-	public static final CreativeTabs creativeTab = new CreativeTabs(CreativeTabs.getNextID(), "monstertotems")
+	public static final ItemGroup creativeTab = new ItemGroup(ItemGroup.getNextID(), "monstertotems")
 	{
 		@Override
 		public ItemStack getTabIconItem()
@@ -43,7 +41,7 @@ public class MonsterTotems
 		}
 
 		@Override
-		@SideOnly(Side.CLIENT)
+		@OnlyIn(Dist.CLIENT)
 		public void displayAllRelevantItems(NonNullList<ItemStack> itemList)
 		{
 			super.displayAllRelevantItems(itemList);

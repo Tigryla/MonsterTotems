@@ -12,7 +12,6 @@ import io.github.mspacedev.entities.*;
 import io.github.mspacedev.items.ItemSpiritPowder;
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;

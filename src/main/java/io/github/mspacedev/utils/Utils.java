@@ -37,12 +37,11 @@ public class Utils
 
 			return minX <= entityPos.getX() && maxX >= entityPos.getX() &&
 					minZ <= entityPos.getZ() && maxZ >= entityPos.getZ();
-		}
-		else
+		} else
 		{
 			double distance = Math.sqrt(
 					Math.pow(totemBasePos.getX() - entityPos.getX(), 2) +
-					Math.pow(totemBasePos.getZ() - entityPos.getZ(), 2)
+							Math.pow(totemBasePos.getZ() - entityPos.getZ(), 2)
 			);
 
 			return distance <= range;

@@ -44,7 +44,7 @@ public class ModEntities
 	{
 		return EntityEntryBuilder.create()
 				.entity(entityClass)
-				.id(new ResourceLocation(Reference.MODID, nameId),++id)
+				.id(new ResourceLocation(Reference.MODID, nameId), ++id)
 				.name(entityName)
 				.tracker(64, 1, false)
 				.egg(eggPrimary, eggSecondary)

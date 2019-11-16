@@ -26,6 +26,12 @@ import java.util.Random;
 @Mod.EventBusSubscriber
 public class LootDropsEventHandler
 {
+	public static Item getRandom(Item[] array)
+	{
+		int rnd = new Random().nextInt(array.length);
+		return array[rnd];
+	}
+
 	@SubscribeEvent
 	public void interceptMobDeath(LivingDropsEvent event)
 	{
@@ -42,11 +48,6 @@ public class LootDropsEventHandler
 					checkMob(event);
 			}
 		}
-	}
-
-	public static Item getRandom(Item[] array) {
-		int rnd = new Random().nextInt(array.length);
-		return array[rnd];
 	}
 
 	private void checkMob(LivingDropsEvent event)

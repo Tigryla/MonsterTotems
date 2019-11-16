@@ -55,13 +55,11 @@ public class TotemBaseEventHandler
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
-					}
-					else if (te instanceof TileEntityTotemBaseII && Utils.canSpawnWithinRange(Configs.totemBaseIIRange, pos, entityPos, Configs.isCubicRange))
+					} else if (te instanceof TileEntityTotemBaseII && Utils.canSpawnWithinRange(Configs.totemBaseIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;
-					}
-					else if (te instanceof TileEntityTotemBaseIII && Utils.canSpawnWithinRange(Configs.totemBaseIIIRange, pos, entityPos, Configs.isCubicRange))
+					} else if (te instanceof TileEntityTotemBaseIII && Utils.canSpawnWithinRange(Configs.totemBaseIIIRange, pos, entityPos, Configs.isCubicRange))
 					{
 						denySpawning(event, (TileEntityTotemBase) te);
 						break;

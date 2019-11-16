@@ -27,6 +27,13 @@ public class Configs
 	})
 	public static boolean isCubicRange = true;
 
+	@Config.LangKey("config.is_y_always_256")
+	@Config.Comment({
+			"§eIf true, Totem Bases will prevent spawns from bedrock to world height!",
+			"§cIf false, Totem Bases will prevent spawns within a spherical/cubical radius, using the Tier range."
+	})
+	public static boolean isYAlways256 = true;
+
 	@Config.LangKey("config.random_spirits")
 	@Config.Comment({
 			"§eIf false, mobs will only drop their specific spirit on death.",

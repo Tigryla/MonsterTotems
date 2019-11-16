@@ -36,15 +36,7 @@ public class ModItems
 	public static final Item zombie_pigman_spirit = new ItemZombiePigmanSpirit("zombie_pigman_spirit");
 	public static final Item ghast_spirit = new ItemGhastSpirit("ghast_spirit");
 	public static final Item magma_cube_spirit = new ItemMagmaCubeSpirit("magma_cube_spirit");
-
-	public static Item[] ITEMS = {
-			// Tools
-			carving_tool,
-			spirit_knife,
-			// Ingot
-			spirit_powder,
-			spirit_ingot,
-			// Mob Spirits
+	public static final Item[] SPIRITS = {
 			zombie_spirit,
 			skeleton_spirit,
 			creeper_spirit,
@@ -58,8 +50,14 @@ public class ModItems
 			ghast_spirit,
 			magma_cube_spirit
 	};
-
-	public static final Item[] SPIRITS = {
+	public static Item[] ITEMS = {
+			// Tools
+			carving_tool,
+			spirit_knife,
+			// Ingot
+			spirit_powder,
+			spirit_ingot,
+			// Mob Spirits
 			zombie_spirit,
 			skeleton_spirit,
 			creeper_spirit,

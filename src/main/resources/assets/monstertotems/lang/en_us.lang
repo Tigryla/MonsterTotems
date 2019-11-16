@@ -182,6 +182,7 @@ base.master=All monsters
 #### Config ####
 # General
 config.is_cubic_range=Is Cubic Range?
+config.is_y_always_256=Is Y Always 256?
 config.prevent_spawners=Prevent Spawners
 config.random_spirits=Random Spirits
 

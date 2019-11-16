@@ -15,7 +15,7 @@ public class Reference
 {
 	public static final String NAME = "Monster Totems";
 	public static final String MODID = "monstertotems";
-	public static final String VERSION = "2.0.0";
+	public static final String VERSION = "@VERSION@";
 	public static final String COMMON_PROXY = "io.github.mspacedev.proxies.CommonProxy";
 	public static final String CLIENT_PROXY = "io.github.mspacedev.proxies.ClientProxy";
 

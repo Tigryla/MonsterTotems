@@ -131,9 +131,9 @@ public class TotemBaseRegistryEventHandler
 					{
 						positions.add(
 								new BlockPos(
-									coords[i + 0],
-									coords[i + 1],
-									coords[i + 2]
+										coords[i + 0],
+										coords[i + 1],
+										coords[i + 2]
 								)
 						);
 					}

@@ -1,0 +1,191 @@
+# 简体中文 zh_cn
+
+# 译者:qsefthuopq
+# Translation Instruction:
+#
+# Only replace the words on the right side of the =.
+# Do not touch the words on the left. Once translated, save the file as "<region>.lang". e.g. "en_gb.lang"
+# Replace the first line of this file with the new region.
+#
+# Please create a pull request here once complete: https://github.com/MSpaceDev/MonsterTotems/pulls
+# Make the title of the pull request, "Added <region> translation support"
+#
+# Thank you for the help!
+#
+
+#### 创造模式栏目名 ####
+itemGroup.monstertotems=怪物图腾
+
+#### 实体 ####
+entity.spirit_zombie.name=魂魄僵尸
+entity.spirit_skeleton.name=魂魄骷髅
+entity.spirit_creeper.name=魂魄苦力怕
+entity.spirit_spider.name=魂魄蜘蛛
+entity.spirit_enderman.name=魂魄末影人
+entity.spirit_witch.name=魂魄女巫
+entity.spirit_silverfish.name=魂魄蠹虫
+entity.spirit_slime.name=魂魄史莱姆
+entity.spirit_blaze.name=魂魄烈焰人
+entity.spirit_ghast.name=魂魄恶魂
+entity.spirit_zombie_pigman.name=魂魄僵尸猪人
+entity.spirit_magma_cube.name=魂魄岩浆怪
+entity.spirit_cave_spider.name=魂魄洞穴蜘蛛
+entity.spirit_husk.name=魂魄尸壳
+entity.spirit_stray.name=魂魄流髑
+entity.spirit_wither_skeleton.name=魂魄凋灵骷髅
+entity.spirit_zombie_villager.name=魂魄僵尸村民
+
+#### 方块 ####
+# 图腾基座
+tile.totem_base_i.name=图腾基座 I
+tile.totem_base_ii.name=图腾基座 II
+tile.totem_base_iii.name=图腾基座 III
+
+#注魂原木
+tile.zombie_infused_log.name=僵尸注魂原木
+tile.skeleton_infused_log.name=骷髅注魂原木
+tile.creeper_infused_log.name=苦力怕注魂原木
+tile.spider_infused_log.name=蜘蛛注魂原木
+tile.enderman_infused_log.name=末影人注魂原木
+tile.witch_infused_log.name=女巫注魂原木
+tile.silverfish_infused_log.name=蠹虫注魂原木
+tile.slime_infused_log.name=史莱姆注魂原木
+tile.blaze_infused_log.name=烈焰人注魂原木
+tile.ghast_infused_log.name=恶魂注魂原木
+tile.zombie_pigman_infused_log.name=僵尸猪人注魂原木
+tile.magma_cube_infused_log.name=岩浆怪注魂原木
+
+#图腾
+tile.zombie_totem.name=僵尸图腾
+tile.skeleton_totem.name=骷髅图腾
+tile.creeper_totem.name=苦力怕图腾
+tile.spider_totem.name=蜘蛛图腾
+tile.enderman_totem.name=末影人图腾
+tile.witch_totem.name=女巫图腾
+tile.silverfish_totem.name=蠹虫图腾
+tile.slime_totem.name=史莱姆图腾
+tile.blaze_totem.name=烈焰人图腾
+tile.ghast_totem.name=恶魂图腾
+tile.zombie_pigman_totem.name=僵尸猪人图腾
+tile.magma_cube_totem.name=岩浆怪图腾
+tile.overworld_totem.name=世界图腾
+tile.nether_totem.name=地狱图腾
+tile.unnatural_totem.name=非自然图腾
+tile.master_totem.name=大师图腾
+
+# 效用工具
+
+#### 物品 ####
+# 工具
+item.carving_tool.name=刻魂之刃
+item.spirit_knife.name=断魂之刃
+#怪物魂魄
+item.zombie_spirit.name=僵尸之魂
+item.skeleton_spirit.name=骷髅之魂
+item.creeper_spirit.name=苦力怕之魂
+item.spider_spirit.name=蜘蛛之魂
+item.enderman_spirit.name=末影人之魂
+item.witch_spirit.name=女巫之魂
+item.silverfish_spirit.name=蠹虫之魂
+item.slime_spirit.name=史莱姆之魂
+item.blaze_spirit.name=烈焰人之魂
+item.zombie_pigman_spirit.name=僵尸猪人之魂
+item.ghast_spirit.name=恶魂之魂
+item.magma_cube_spirit.name=岩浆怪之魂
+# Ingot
+item.spirit_powder.name=魂魄粉
+item.spirit_ingot.name=魂魄锭
+
+#### 工具提示 ####
+# 魂魄粉
+tooltip.spirit_powder=神秘的浓缩粉末
+
+# 魂魄之刃
+tooltip.spirit_knife=这把剑可以在你杀死怪物时斩断怪物的魂魄
+
+# 魂魄锭
+tooltip.spirit_ingot=熔炼魂魄粉得到的罕见金属
+
+# 刻魂之刃
+tooltip.carving_tool=用在注魂原木上来将怪物魂魄注入图腾
+
+#魂魄
+tooltip.spirit=右击一块圆木来注入魂魄
+
+# Shift查看信息
+tooltip.shift=请按SHIFT查看详细信息
+
+# 信息缺失
+tooltip.missing=没有更多信息!请联系模组作者!
+
+#注魂原木
+tooltip.zombie_infused_log=使用刻魂之刃来创建僵尸图腾
+tooltip.skeleton_infused_log=使用刻魂之刃来创建骷髅图腾
+tooltip.creeper_infused_log=使用刻魂之刃来创建苦力怕图腾
+tooltip.spider_infused_log=使用刻魂之刃来创建蜘蛛图腾
+tooltip.enderman_infused_log=使用刻魂之刃来创建末影人图腾
+tooltip.witch_infused_log=使用刻魂之刃来创建女巫图腾
+tooltip.silverfish_infused_log=使用刻魂之刃来创建蠹虫图腾
+tooltip.slime_infused_log=使用刻魂之刃来创建史莱姆图腾
+tooltip.blaze_infused_log=使用刻魂之刃来创建烈焰人图腾
+tooltip.zombie_pigman_infused_log=使用刻魂之刃来创建僵尸猪人图腾
+tooltip.ghast_infused_log=使用刻魂之刃来创建恶魂图腾
+tooltip.magma_cube_infused_log=使用刻魂之刃来创建岩浆怪图腾
+
+#图腾
+tooltip.zombie_totem=阻止在图腾附近生成僵尸和尸壳
+tooltip.skeleton_totem=阻止在图腾附近生成骷髅、凋灵骷髅和尸壳
+tooltip.creeper_totem=阻止在图腾附近生成苦力怕
+tooltip.spider_totem=阻止在图腾附近生成蜘蛛
+tooltip.enderman_totem=阻止在图腾附近生成末影人
+tooltip.witch_totem=阻止在图腾附近生成女巫
+tooltip.silverfish_totem=阻止在图腾附近生成蠹虫
+tooltip.slime_totem=阻止在图腾附近生成史莱姆
+tooltip.blaze_totem=阻止在图腾附近生成烈焰人
+tooltip.zombie_pigman_totem=阻止在图腾附近生成僵尸猪人
+tooltip.ghast_totem=阻止在图腾附近生成恶魂
+tooltip.magma_cube_totem=阻止在图腾附近生成岩浆怪
+tooltip.overworld_totem=融合了僵尸、骷髅、苦力怕和蜘蛛的魂魄的图腾
+tooltip.nether_totem=融合了烈焰人、恶魂、僵尸猪人和岩浆怪的魂魄的图腾
+tooltip.unnatural_totem=融合了末影人、女巫、蠹虫和史莱姆的魂魄的图腾
+tooltip.master_totem=阻止在图腾附近生成所有怪物 §o(包括其他模组的怪物)
+
+# 图腾基座
+tooltip.totem_base=构成图腾所必须的物品，同时也决定了图腾的生效范围
+
+# 图腾基座I
+tooltip.totem_base_i=§b范围: 64 格方块
+
+# 图腾基座II
+tooltip.totem_base_ii=§b范围: 96 格方块
+
+# 图腾基座III
+tooltip.totem_base_iii=§b范围: 128 格方块
+
+# 图腾基座信息
+base.no_active_heads=§c基座上没有图腾
+base.prevent=§6禁止生成:
+base.zombies=僵尸和尸壳
+base.creepers=苦力怕
+base.skeletons=骷髅、凋灵骷髅和流髑
+base.spiders=蜘蛛
+base.endermen=末影人
+base.witches=女巫
+base.silverfish=蠹虫
+base.slimes=史莱姆
+base.blazes=烈焰人
+base.zombie_pigmen=僵尸猪人
+base.ghasts=恶魂
+base.magma_cubes=岩浆怪
+base.master=所有怪物
+
+#### 配置 ####
+# 全局
+config.is_cubic_range=是否为立方范围？
+config.prevent_spawners=阻止刷怪笼
+config.random_spirits=混沌魂魄
+
+# 图腾基座
+config.base.i_range=图腾基座 I 范围
+config.base.ii_range=图腾基座 II 范围
+config.base.iii_range=图腾基座 III 范围

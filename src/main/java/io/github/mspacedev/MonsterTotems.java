@@ -10,7 +10,6 @@ package io.github.mspacedev;
 
 import io.github.mspacedev.blocks.ModBlocks;
 import io.github.mspacedev.handlers.*;
-import io.github.mspacedev.entities.ModEntities;
 import io.github.mspacedev.init.InitRecipes;
 import io.github.mspacedev.init.InitTileEntities;
 import io.github.mspacedev.proxies.CommonProxy;

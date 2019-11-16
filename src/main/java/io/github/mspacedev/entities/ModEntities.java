@@ -10,8 +10,6 @@ package io.github.mspacedev.entities;
 
 import io.github.mspacedev.utils.Reference;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
@@ -44,11 +42,10 @@ public class ModEntities
 	{
 		return EntityEntryBuilder.create()
 				.entity(entityClass)
-				.id(new ResourceLocation(Reference.MODID, nameId),++id)
+				.id(new ResourceLocation(Reference.MODID, nameId), ++id)
 				.name(entityName)
 				.tracker(64, 1, false)
 				.egg(eggPrimary, eggSecondary)
-				.spawn(EnumCreatureType.MONSTER, 0, 0, 0, Biomes.VOID)
 				.build();
 	}
 }

@@ -12,9 +12,6 @@ import io.github.mspacedev.items.spirits.*;
 import io.github.mspacedev.items.tools.ItemCarvingTool;
 import io.github.mspacedev.items.tools.ItemSpiritKnife;
 import net.minecraft.item.Item;
-import scala.actors.threadpool.Arrays;
-
-import java.util.ArrayList;
 
 public class ModItems
 {

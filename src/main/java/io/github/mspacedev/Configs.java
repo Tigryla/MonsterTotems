@@ -22,10 +22,16 @@ public class Configs
 	@Config.LangKey("config.is_cubic_range")
 	@Config.Comment({
 			"§eIf true, Totem Bases will prevent spawns within a cubic radius.",
-			"§cIf false, Totem Bases will prevent spawns within a cylindrical radius.",
-			"§fNOTE: The Y-level of entities are ignored. The Totem Base range is always from bedrock to world height!"
+			"§cIf false, Totem Bases will prevent spawns within a cylindrical radius."
 	})
 	public static boolean isCubicRange = true;
+
+	@Config.LangKey("config.is_y_always_256")
+	@Config.Comment({
+			"§eIf true, Totem Bases will prevent spawns from bedrock to world height!.",
+			"§cIf false, Totem Bases will prevent spawns within a spherical/cubical radius, using the Tier range."
+	})
+	public static boolean isYAlways256 = true;
 
 	@Config.LangKey("config.prevent_spawners")
 	@Config.Comment({

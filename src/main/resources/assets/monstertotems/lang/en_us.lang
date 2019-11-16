@@ -6,6 +6,7 @@
 # Only replace the words on the right side of the =.
 # Do not touch the words on the left. Once translated, save the file as "<region>.lang". e.g. "en_gb.lang"
 # Replace the first line of this file with the new region.
+# Never replace characters, such as "§<letter>" as these are colours!
 #
 # Please create a pull request here once complete: https://github.com/MSpaceDev/MonsterTotems/pulls
 # Make the title of the pull request, "Added <region> translation support"
@@ -182,6 +183,7 @@ base.master=All monsters
 #### Config ####
 # General
 config.is_cubic_range=Is Cubic Range?
+config.is_y_always_256=Is Y Always 256?
 config.prevent_spawners=Prevent Spawners
 config.random_spirits=Random Spirits
 

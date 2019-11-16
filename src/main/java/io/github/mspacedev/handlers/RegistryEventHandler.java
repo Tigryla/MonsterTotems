@@ -105,5 +105,7 @@ public class RegistryEventHandler
 		{
 			registry.register(entityEntry);
 		}
+
+		Utils.getLogger().info("Monster Totems Entities Registered");
 	}
 }

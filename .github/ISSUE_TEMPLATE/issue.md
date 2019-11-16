@@ -1,3 +1,12 @@
+---
+name: Issue
+about: Submit your issue.
+title: ''
+labels: Bug
+assignees: 'MSpaceDev'
+
+---
+
 #### Issue Description:
 Note: If this bug occurs in a modpack, please report this to the modpack author. Otherwise, delete this line and add your description here.
 

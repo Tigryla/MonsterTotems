@@ -5,6 +5,7 @@ import com.mspacedev.init.ModItemGroups;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -15,9 +16,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
+import java.util.ArrayList;
+
 @Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber
 {
+	public static ArrayList<EntityType<?>> ALL_ENTITIES = new ArrayList<>();
+
 	@SubscribeEvent
 	public static void onRegisterBlocks(RegistryEvent.Register<Block> event)
 	{
@@ -33,14 +38,16 @@ public class ModEventSubscriber
 				setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "creeper_spirit")
 		);
 
-		for (final Block block : ForgeRegistries.BLOCKS.getValues()) {
+		for (final Block block : ForgeRegistries.BLOCKS.getValues())
+		{
 
 			final ResourceLocation blockRegistryName = block.getRegistryName();
 			// An extra safe-guard against badly registered blocks
 			Preconditions.checkNotNull(blockRegistryName, "Registry Name of Block \"" + block + "\" of class \"" + block.getClass().getName() + "\"is null! This is not allowed!");
 
 			// Check that the blocks is from our mod, if not, continue to the next block
-			if (!blockRegistryName.getNamespace().equals(Main.MODID)) {
+			if (!blockRegistryName.getNamespace().equals(Main.MODID))
+			{
 				continue;
 			}
 
@@ -51,11 +58,19 @@ public class ModEventSubscriber
 		}
 	}
 
-	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
+	@SubscribeEvent
+	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
+	{
+
+	}
+
+	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)
+	{
 		return setup(entry, new ResourceLocation(Main.MODID, name));
 	}
 
-	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName) {
+	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName)
+	{
 		entry.setRegistryName(registryName);
 		return entry;
 	}

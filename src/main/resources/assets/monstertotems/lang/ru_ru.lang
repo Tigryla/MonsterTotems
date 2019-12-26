@@ -81,28 +81,28 @@ tile.master_totem.name=Master Totem Head
 item.carving_tool.name=Инструмент Для Резьбы
 item.spirit_knife.name=Нож Духов
 # Spirits
-item.zombie_spirit.name=Zombie Spirit
-item.skeleton_spirit.name=Skeleton Spirit
-item.creeper_spirit.name=Creeper Spirit
-item.spider_spirit.name=Spider Spirit
-item.enderman_spirit.name=Enderman Spirit
-item.witch_spirit.name=Witch Spirit
-item.silverfish_spirit.name=Silverfish Spirit
-item.slime_spirit.name=Slime Spirit
-item.blaze_spirit.name=Blaze Spirit
-item.zombie_pigman_spirit.name=Zombie Pigman Spirit
-item.ghast_spirit.name=Ghast Spirit
-item.magma_cube_spirit.name=Magma Cube Spirit
+item.zombie_spirit.name=Дух Зомби
+item.skeleton_spirit.name=Дух Скелета
+item.creeper_spirit.name=Дух Крипера
+item.spider_spirit.name=Дух Паука
+item.enderman_spirit.name=Дух Странника Края
+item.witch_spirit.name=Дух Ведьмы
+item.silverfish_spirit.name=Дух Чешуиницы
+item.slime_spirit.name=Дух Слизня
+item.blaze_spirit.name=Дух Ифрита
+item.zombie_pigman_spirit.name=Дух Свинозомби
+item.ghast_spirit.name=Дух Гаста
+item.magma_cube_spirit.name=Дух Лавового Куба
 # Ingot
-item.spirit_powder.name=Spirit Powder
-item.spirit_ingot.name=Spirit Ingot
+item.spirit_powder.name=Пыль Духов
+item.spirit_ingot.name=Слиток Духов
 
 #### Tooltips ####
 # Spirit Powder
-tooltip.spirit_powder=A mysterious, hard compressed powder
+tooltip.spirit_powder=Таинственный, сильно сжатый порошок
 
 # Spirit Knife
-tooltip.spirit_knife=A mysterious blade that seems to drop monster's spirits upon their death
+tooltip.spirit_knife=Таинстевенный клинок который, кажется выбивает духи монстров после смерти
 
 # Spirit Ingot
 tooltip.spirit_ingot=An unusual element that is created by smelting Spirit Powder
@@ -114,10 +114,10 @@ tooltip.carving_tool=Use on Infused Logs to carve them into Totem Heads
 tooltip.spirit=Right click on a log to infuse this spirit into it
 
 # Shift for Info
-tooltip.shift=Press SHIFT for more information
+tooltip.shift=Нажмите SHIFT для большего количества информации
 
 # Missing tooltip
-tooltip.missing=No information provided! Contact Mod Author!
+tooltip.missing=Нет информации! Соединитесь с автором!
 
 # Infused Logs
 tooltip.zombie_infused_log=Carve with the Carving Tool to create a Zombie Totem Head

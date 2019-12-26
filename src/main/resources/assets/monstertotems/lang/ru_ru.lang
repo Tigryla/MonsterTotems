@@ -1,17 +1,17 @@
 # Russian RU
 
 #
-# Translation Instruction:
+# Инструкция по переводу:
 #
-# Only replace the words on the right side of the =.
-# Do not touch the words on the left. Once translated, save the file as "<region>.lang". e.g. "en_gb.lang"
-# Replace the first line of this file with the new region.
-# Never replace characters, such as "§<letter>" as these are colours!
+# Замените только слова на правой стороне =.
+# Не трогайте слова слева. После перевода, сохранить файл как "<region>.lang". e.g. "en_gb.lang"
+# Замените первую строку этого файла новым регионом.
+# Никогда не заменяйте буквы, такие как "§<letter>" это цвета!
 #
-# Please create a pull request here once complete: https://github.com/MSpaceDev/MonsterTotems/pulls
-# Make the title of the pull request, "Added <region> translation support"
+# Пожалуйста, создайте пулл-запрос здесь после завершения: https://github.com/MSpaceDev/MonsterTotems/pulls
+# Сделайте заголовок запроса на получение, "Added <region> поддержка перевода"
 #
-# Thank you for the help!
+# Спасибо за помощь!
 #
 
 #### Creative Tab ####
@@ -38,23 +38,23 @@ entity.spirit_zombie_villager.name=Дух Зомби Жителя
 
 #### Blocks ####
 # Totem Bases
-tile.totem_base_i.name=Totem Base Tier I
-tile.totem_base_ii.name=Totem Base Tier II
-tile.totem_base_iii.name=Totem Base Tier III
+tile.totem_base_i.name=Основа Тотема Уровень I
+tile.totem_base_ii.name=Основа Тотема Уровень II
+tile.totem_base_iii.name=Основа Тотема Уровень III
 
 # Infused Logs
-tile.zombie_infused_log.name=Zombie Infused Log
-tile.skeleton_infused_log.name=Skeleton Infused Log
-tile.creeper_infused_log.name=Creeper Infused Log
-tile.spider_infused_log.name=Spider Infused Log
-tile.enderman_infused_log.name=Enderman Infused Log
-tile.witch_infused_log.name=Witch Infused Log
-tile.silverfish_infused_log.name=Silverfish Infused Log
-tile.slime_infused_log.name=Slime Infused Log
-tile.blaze_infused_log.name=Blaze Infused Log
-tile.ghast_infused_log.name=Ghast Infused Log
-tile.zombie_pigman_infused_log.name=Zombie Pigman Infused Log
-tile.magma_cube_infused_log.name=Magma Cube Infused Log
+tile.zombie_infused_log.name=Заряженное Зомби Бревно
+tile.skeleton_infused_log.name=Заряженное Скелетом Бревно
+tile.creeper_infused_log.name=Заряженное Крипером Бревно
+tile.spider_infused_log.name=Заряженное Пауком Бревно
+tile.enderman_infused_log.name=Заряженное Странником Края Бревно
+tile.witch_infused_log.name=Заряженное Ведьмой Бревно
+tile.silverfish_infused_log.name=Заряженное Чешуйницей Бревно
+tile.slime_infused_log.name=Заряженное Слизнем Бревно
+tile.blaze_infused_log.name=Заряженное Ифритом Бревно
+tile.ghast_infused_log.name=Заряженное Гастом Бревно
+tile.zombie_pigman_infused_log.name=Заряженное Свинозомби Бревно
+tile.magma_cube_infused_log.name=Заряженное Лавовым Кубом Бревно
 
 # Totem Heads
 tile.zombie_totem.name=Zombie Totem Head

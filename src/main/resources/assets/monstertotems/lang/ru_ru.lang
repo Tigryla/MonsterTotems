@@ -78,8 +78,8 @@ tile.master_totem.name=Master Totem Head
 
 #### Items ####
 # Tools
-item.carving_tool.name=Carving Tool
-item.spirit_knife.name=Spirit Knife
+item.carving_tool.name=Инструмент Для Резьбы
+item.spirit_knife.name=Нож Духов
 # Spirits
 item.zombie_spirit.name=Zombie Spirit
 item.skeleton_spirit.name=Skeleton Spirit
